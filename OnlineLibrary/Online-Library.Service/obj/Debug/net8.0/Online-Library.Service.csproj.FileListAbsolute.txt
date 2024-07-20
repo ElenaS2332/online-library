@@ -1,0 +1,17 @@
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Service.deps.json
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Service.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Service.pdb
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.AssemblyInfoInputs.cache
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.AssemblyInfo.cs
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.csproj.CoreCompileInputs.cache
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\refint\Online-Library.Service.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.pdb
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\ref\Online-Library.Service.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Domain.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Repository.dll
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Repository.pdb
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\bin\Debug\net8.0\Online-Library.Domain.pdb
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-Library.Service.csproj.AssemblyReference.cache
+C:\Users\gorgi\Desktop\Finki\3_Godina_2_Semetar\Integrirani Sistemi\workspace\online-library\OnlineLibrary\Online-Library.Service\obj\Debug\net8.0\Online-L.210DA416.Up2Date

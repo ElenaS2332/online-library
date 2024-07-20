@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Online_Library.Service</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Online-Library.Repository\Online-Library.Repository.csproj" />
+		<ProjectReference Include="..\Online-Library.Domain\Online-Library.Domain.csproj" />
+	</ItemGroup>
+</Project>
