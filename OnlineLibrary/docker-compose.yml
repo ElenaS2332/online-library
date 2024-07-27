@@ -1,0 +1,6 @@
+﻿services:
+  online-library.web:
+    image: online-library.web
+    build:
+      context: .
+      dockerfile: Online-Library.WEB/Dockerfile

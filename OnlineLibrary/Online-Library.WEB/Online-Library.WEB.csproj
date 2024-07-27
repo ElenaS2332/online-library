@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-Online_Library.WEB-9664c2ae-ab46-48f5-8aee-fe6f304921a7</UserSecretsId>
     <RootNamespace>Online_Library.WEB</RootNamespace>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,12 +15,23 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
   </ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Online-Library.Domain\Online-Library.Domain.csproj" />
 		<ProjectReference Include="..\Online-Library.Repository\Online-Library.Repository.csproj" />
 		<ProjectReference Include="..\Online-Library.Service\Online-Library.Service.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ApiControllers\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="..\.dockerignore">
+	    <Link>.dockerignore</Link>
+	  </Content>
 	</ItemGroup>
 
 </Project>
