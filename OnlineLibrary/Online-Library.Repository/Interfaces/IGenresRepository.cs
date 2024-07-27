@@ -4,9 +4,9 @@ namespace Online_Library.Repository.Interfaces;
 
 public interface IGenresRepository
 {
-    IEnumerable<Genre> GetAllGenres();
-    Genre GetGenre(Guid id);
-    void InsertGenre(Genre genre);
-    void UpdateGenre(Genre genre);
-    void DeleteGenre(Genre genre);
+    Task<IEnumerable<Genre>> GetAllGenres();
+    Task<Genre> GetGenre(Guid id);
+    Task InsertGenre(Genre genre);
+    Task UpdateGenre(Genre genre);
+    Task DeleteGenre(Genre genre);
 }

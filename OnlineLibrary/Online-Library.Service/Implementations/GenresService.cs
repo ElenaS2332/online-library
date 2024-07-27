@@ -6,28 +6,28 @@ namespace Online_Library.Service.Implementations;
 
 public class GenresService(IGenresRepository genresRepository) : IGenresService
 {
-    public IEnumerable<Genre> GetAllGenres()
+    public async Task<IEnumerable<Genre>> GetAllGenres()
     {
-        return genresRepository.GetAllGenres();
+        return await genresRepository.GetAllGenres();
     }
 
-    public Genre GetGenre(Guid id)
+    public async Task<Genre> GetGenre(Guid id)
     {
-        return genresRepository.GetGenre(id);
+        return await genresRepository.GetGenre(id);
     }
 
-    public void InsertGenre(Genre genre)
+    public async Task InsertGenre(Genre genre)
     {
-        genresRepository.InsertGenre(genre);
+        await genresRepository.InsertGenre(genre);
     }
 
-    public void UpdateGenre(Genre genre)
+    public async Task UpdateGenre(Genre genre)
     {
-        genresRepository.UpdateGenre(genre);
+        await genresRepository.UpdateGenre(genre);
     }
 
-    public void DeleteGenre(Genre genre)
+    public async Task DeleteGenre(Genre genre)
     {
-        genresRepository.DeleteGenre(genre);
+        await genresRepository.DeleteGenre(genre);
     }
 }

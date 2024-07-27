@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository.Interfaces;
 
@@ -5,31 +6,31 @@ namespace Online_Library.Repository.Implementations;
 
 public class GenresRepository(ApplicationDbContext context) : IGenresRepository
 {
-    public IEnumerable<Genre> GetAllGenres()
+    public async Task<IEnumerable<Genre>> GetAllGenres()
     {
-        return context.Genres.ToList();
+        return await context.Genres.ToListAsync();
     }
 
-    public Genre GetGenre(Guid id)
+    public async Task<Genre> GetGenre(Guid id)
     {
-        return context.Genres.FirstOrDefault(g => g.Id == id);
+        return await context.Genres.FirstOrDefaultAsync(g => g.Id == id);
     }
 
-    public void InsertGenre(Genre genre)
+    public async Task InsertGenre(Genre genre)
     {
-        context.Genres.Add(genre);
-        context.SaveChanges();
+        await context.Genres.AddAsync(genre);
+        await context.SaveChangesAsync();
     }
 
-    public void UpdateGenre(Genre genre)
+    public async Task UpdateGenre(Genre genre)
     {
         context.Genres.Update(genre);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 
-    public void DeleteGenre(Genre genre)
+    public async Task DeleteGenre(Genre genre)
     {
         context.Genres.Remove(genre);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 }

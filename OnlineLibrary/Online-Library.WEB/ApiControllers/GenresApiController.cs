@@ -10,9 +10,9 @@ namespace Online_Library.WEB.ApiControllers
     public class GenresApiController(IGenresService genresService) : ControllerBase
     {
         [HttpGet]
-        public ActionResult<IEnumerable<GenreDto>> GetGenres()
+        public async Task<ActionResult<IEnumerable<GenreDto>>> GetGenres()
         {
-            var genres = genresService.GetAllGenres();
+            var genres = await genresService.GetAllGenres();
             var genresDtos = new List<GenreDto>();
             foreach (var genre in genres)
             {
@@ -26,9 +26,9 @@ namespace Online_Library.WEB.ApiControllers
         }
         
         [HttpGet("{genreId}")]
-        public ActionResult<GenreDto> GetGenreById(Guid genreId)
+        public async Task<ActionResult<GenreDto>> GetGenreById(Guid genreId)
         {
-            var genre = genresService.GetGenre(genreId);
+            var genre = await genresService.GetGenre(genreId);
 
             var genreDto = new GenreDto
             {
@@ -40,32 +40,32 @@ namespace Online_Library.WEB.ApiControllers
         }
         
         [HttpPost]
-        public ActionResult<GenreDto> InsertGenre(GenreDto genreDto)
+        public async Task<ActionResult<GenreDto>> InsertGenre(GenreDto genreDto)
         {
             var genre = new Genre
             {
                 Name = genreDto.Name
             };
             
-            genresService.InsertGenre(genre);
+            await genresService.InsertGenre(genre);
 
             return Ok();
         }
         
         [HttpPut]
-        public ActionResult<GenreDto> UpdateGenre(GenreDto genreDto)
+        public async Task<ActionResult<GenreDto>> UpdateGenre(GenreDto genreDto)
         {
-            var genre = genresService.GetGenre(genreDto.Id);
-            genresService.UpdateGenre(genre);
+            var genre = await genresService.GetGenre(genreDto.Id);
+            await genresService.UpdateGenre(genre);
             
             return Ok();
         }
         
         [HttpDelete("{genreId}")]
-        public ActionResult<GenreDto> DeleteGenre(Guid genreId)
+        public async Task<ActionResult<GenreDto>> DeleteGenre(Guid genreId)
         {
-            var genre = genresService.GetGenre(genreId);
-            genresService.DeleteGenre(genre);
+            var genre = await genresService.GetGenre(genreId);
+            await genresService.DeleteGenre(genre);
             
             return Ok();
         }
