@@ -100,3 +100,12 @@ $RECYCLE.BIN/
 
 # Tye
 .tye/
+
+Online-Library.Domain/bin/*
+Online-Library.Domain/obj/*
+Online-Library.Repository/bin/*
+Online-Library.Repository/obj/*
+Online-Library.Service/bin/*
+Online-Library.Service/obj/*
+Online-Library.WEB/bin/*
+Online-Library.WEB/obj/*
