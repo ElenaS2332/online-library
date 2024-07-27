@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\Online-Library.WEB.props" />
+  <Import Project="../build/Online-Library.WEB.props" />
 </Project>

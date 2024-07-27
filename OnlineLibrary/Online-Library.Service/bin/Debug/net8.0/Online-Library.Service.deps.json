@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Online-Library.Service/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
           "Online-Library.Domain": "1.0.0",
           "Online-Library.Repository": "1.0.0"
         },
@@ -208,6 +209,9 @@
         }
       },
       "Online-Library.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7"
+        },
         "runtime": {
           "Online-Library.Domain.dll": {}
         }

@@ -320,6 +320,9 @@
       "Online-Library.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7"
+        },
         "compile": {
           "bin/placeholder/Online-Library.Domain.dll": {}
         },
@@ -846,42 +849,41 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.7",
       "Online-Library.Domain >= 1.0.0",
       "Online-Library.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gorgi\\.nuget\\packages\\": {}
+    "/Users/elenastamenkovska/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Service\\Online-Library.Service.csproj",
+      "projectUniqueName": "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Service/Online-Library.Service.csproj",
       "projectName": "Online-Library.Service",
-      "projectPath": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Service\\Online-Library.Service.csproj",
-      "packagesPath": "C:\\Users\\gorgi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Service\\obj\\",
+      "projectPath": "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Service/Online-Library.Service.csproj",
+      "packagesPath": "/Users/elenastamenkovska/.nuget/packages/",
+      "outputPath": "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gorgi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/elenastamenkovska/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Domain\\Online-Library.Domain.csproj": {
-              "projectPath": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Domain\\Online-Library.Domain.csproj"
+            "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Domain/Online-Library.Domain.csproj": {
+              "projectPath": "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Domain/Online-Library.Domain.csproj"
             },
-            "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Repository\\Online-Library.Repository.csproj": {
-              "projectPath": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\Online-Library.Repository\\Online-Library.Repository.csproj"
+            "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Repository/Online-Library.Repository.csproj": {
+              "projectPath": "/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibrary/Online-Library.Repository/Online-Library.Repository.csproj"
             }
           }
         }
@@ -890,16 +892,17 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[8.0.7, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -916,7 +919,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
