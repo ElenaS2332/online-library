@@ -11,7 +11,7 @@ public class GenresRepository(ApplicationDbContext context) : IGenresRepository
         return await context.Genres.ToListAsync();
     }
 
-    public async Task<Genre> GetGenre(Guid id)
+    public async Task<Genre?> GetGenre(Guid id)
     {
         return await context.Genres.FirstOrDefaultAsync(g => g.Id == id);
     }
@@ -24,7 +24,6 @@ public class GenresRepository(ApplicationDbContext context) : IGenresRepository
 
     public async Task UpdateGenre(Genre genre)
     {
-        context.Genres.Update(genre);
         await context.SaveChangesAsync();
     }
 

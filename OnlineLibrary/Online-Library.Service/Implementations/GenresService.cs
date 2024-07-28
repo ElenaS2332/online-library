@@ -11,7 +11,7 @@ public class GenresService(IGenresRepository genresRepository) : IGenresService
         return await genresRepository.GetAllGenres();
     }
 
-    public async Task<Genre> GetGenre(Guid id)
+    public async Task<Genre?> GetGenre(Guid id)
     {
         return await genresRepository.GetGenre(id);
     }

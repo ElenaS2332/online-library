@@ -18,7 +18,6 @@ namespace Online_Library.WEB.ApiControllers
             {
                 genresDtos.Add(new GenreDto
                 {
-                    Id = genre.Id,
                     Name = genre.Name
                 });
             }
@@ -30,9 +29,13 @@ namespace Online_Library.WEB.ApiControllers
         {
             var genre = await genresService.GetGenre(genreId);
 
+            if (genre is null)
+            {
+                return NotFound();
+            }
+            
             var genreDto = new GenreDto
             {
-                Id = genreId,
                 Name = genre.Name
             };
             
@@ -52,10 +55,16 @@ namespace Online_Library.WEB.ApiControllers
             return Ok();
         }
         
-        [HttpPut]
-        public async Task<ActionResult<GenreDto>> UpdateGenre(GenreDto genreDto)
+        [HttpPut("{genreId}")]
+        public async Task<ActionResult<GenreDto>> UpdateGenre(Guid genreId,GenreDto genreDto)
         {
-            var genre = await genresService.GetGenre(genreDto.Id);
+            var genre = await genresService.GetGenre(genreId);
+
+            if (genre is null)
+            {
+                return NotFound();
+            }
+            
             await genresService.UpdateGenre(genre);
             
             return Ok();
@@ -65,6 +74,12 @@ namespace Online_Library.WEB.ApiControllers
         public async Task<ActionResult<GenreDto>> DeleteGenre(Guid genreId)
         {
             var genre = await genresService.GetGenre(genreId);
+            
+            if (genre is null)
+            {
+                return NotFound();
+            }
+            
             await genresService.DeleteGenre(genre);
             
             return Ok();

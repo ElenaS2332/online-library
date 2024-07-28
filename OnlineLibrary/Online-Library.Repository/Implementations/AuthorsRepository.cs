@@ -11,7 +11,7 @@ public class AuthorsRepository(ApplicationDbContext context) : IAuthorsRepositor
         return await context.Authors.ToListAsync();
     }
 
-    public async Task<Author> GetAuthor(Guid id)
+    public async Task<Author?> GetAuthor(Guid id)
     {
         return await context.Authors.FirstOrDefaultAsync(a => a.Id == id);
     }
