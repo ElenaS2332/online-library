@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository.Interfaces;
 
@@ -5,31 +6,30 @@ namespace Online_Library.Repository.Implementations;
 
 public class AuthorsRepository(ApplicationDbContext context) : IAuthorsRepository
 {
-    public IEnumerable<Author> GetAllAuthors()
+    public async Task<IEnumerable<Author>> GetAllAuthors()
     {
-        return context.Authors.ToList();
+        return await context.Authors.ToListAsync();
     }
 
-    public Author GetAuthor(Guid id)
+    public async Task<Author> GetAuthor(Guid id)
     {
-        return context.Authors.FirstOrDefault(a => a.Id == id);
+        return await context.Authors.FirstOrDefaultAsync(a => a.Id == id);
     }
 
-    public void InsertAuthor(Author author)
+    public async Task InsertAuthor(Author author)
     {
-        context.Authors.Add(author);
-        context.SaveChanges();
+        await context.Authors.AddAsync(author);
+        await context.SaveChangesAsync();
     }
 
-    public void UpdateAuthor(Author author)
+    public async Task UpdateAuthor(Author author)
     {
-        context.Authors.Update(author);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 
-    public void DeleteAuthor(Author author)
+    public async Task DeleteAuthor(Author author)
     {
         context.Authors.Remove(author);
-        context.SaveChanges();    
+        await context.SaveChangesAsync();    
     }
 }

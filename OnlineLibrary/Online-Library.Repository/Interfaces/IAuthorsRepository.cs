@@ -4,9 +4,9 @@ namespace Online_Library.Repository.Interfaces;
 
 public interface IAuthorsRepository
 {
-    IEnumerable<Author> GetAllAuthors();
-    Author GetAuthor(Guid id);
-    void InsertAuthor(Author author);
-    void UpdateAuthor(Author author);
-    void DeleteAuthor(Author author);
+    Task<IEnumerable<Author>> GetAllAuthors();
+    Task<Author> GetAuthor(Guid id);
+    Task InsertAuthor(Author author);
+    Task UpdateAuthor(Author author);
+    Task DeleteAuthor(Author author);
 }

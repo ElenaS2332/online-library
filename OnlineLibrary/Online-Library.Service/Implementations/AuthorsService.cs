@@ -6,28 +6,28 @@ namespace Online_Library.Service.Implementations;
 
 public class AuthorsService(IAuthorsRepository authorsRepository) : IAuthorsService
 {
-    public IEnumerable<Author> GetAllAuthors()
+    public async Task<IEnumerable<Author>> GetAllAuthors()
     {
-        return authorsRepository.GetAllAuthors();
+        return await authorsRepository.GetAllAuthors();
     }
 
-    public Author GetAuthor(Guid id)
+    public async Task<Author?> GetAuthor(Guid id)
     {
-        return authorsRepository.GetAuthor(id);
+        return await authorsRepository.GetAuthor(id);
     }
 
-    public void InsertAuthor(Author author)
+    public async Task InsertAuthor(Author author)
     {
-        authorsRepository.InsertAuthor(author);
+        await authorsRepository.InsertAuthor(author);
     }
 
-    public void UpdateAuthor(Author author)
+    public async Task UpdateAuthor(Author author)
     {
-        authorsRepository.UpdateAuthor(author);
+        await authorsRepository.UpdateAuthor(author);
     }
 
-    public void DeleteAuthor(Author author)
+    public async Task DeleteAuthor(Author author)
     {
-        authorsRepository.DeleteAuthor(author);
+        await authorsRepository.DeleteAuthor(author);
     }
 }
