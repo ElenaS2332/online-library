@@ -1,4 +1,5 @@
 using Online_Library.Domain.Entities;
+using Online_Library.Domain.Exceptions;
 using Online_Library.Repository.Interfaces;
 using Online_Library.Service.Interfaces;
 
@@ -23,7 +24,19 @@ public class AuthorsService(IAuthorsRepository authorsRepository) : IAuthorsServ
 
     public async Task UpdateAuthor(Author author)
     {
-        await authorsRepository.UpdateAuthor(author);
+        var authorFromDatabase = await GetAuthor(author.Id);
+
+        if (authorFromDatabase is null)
+        {
+            throw new AuthorNotFoundException();
+        }
+
+        authorFromDatabase.Books = author.Books;
+        authorFromDatabase.Name = author.Name;
+        authorFromDatabase.Surname = author.Surname;
+        authorFromDatabase.DateOfBirth = author.DateOfBirth;
+        
+        await authorsRepository.UpdateAuthor(authorFromDatabase);
     }
 
     public async Task DeleteAuthor(Author author)

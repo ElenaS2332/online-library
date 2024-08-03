@@ -6,35 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
+using Online_Library.Domain.Exceptions;
 using Online_Library.Repository;
+using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.Controllers
 {
-    public class AuthorsController : Controller
+    public class AuthorsController(IAuthorsService authorsService) : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public AuthorsController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
         // GET: Authors
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Authors.ToListAsync());
+            return View(await authorsService.GetAllAuthors());
         }
 
         // GET: Authors/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var author = await authorsService.GetAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -56,25 +45,16 @@ namespace Online_Library.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Surname,DateOfBirth")] Author author)
         {
-            if (ModelState.IsValid)
-            {
-                author.Id = Guid.NewGuid();
-                _context.Add(author);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(author);
+            if (!ModelState.IsValid) return View(author);
+            await authorsService.InsertAuthor(author);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Authors/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var author = await _context.Authors.FindAsync(id);
+            var author = await authorsService.GetAuthor(id);
+            
             if (author == null)
             {
                 return NotFound();
@@ -98,19 +78,11 @@ namespace Online_Library.WEB.Controllers
             {
                 try
                 {
-                    _context.Update(author);
-                    await _context.SaveChangesAsync();
+                    await authorsService.UpdateAuthor(author);
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (AuthorNotFoundException)
                 {
-                    if (!AuthorExists(author.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -118,15 +90,9 @@ namespace Online_Library.WEB.Controllers
         }
 
         // GET: Authors/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var author = await authorsService.GetAuthor(id);
             if (author == null)
             {
                 return NotFound();
@@ -140,19 +106,15 @@ namespace Online_Library.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var author = await _context.Authors.FindAsync(id);
-            if (author != null)
+            var author = await authorsService.GetAuthor(id);
+
+            if (author is null)
             {
-                _context.Authors.Remove(author);
+                return NotFound();
             }
 
-            await _context.SaveChangesAsync();
+            await authorsService.DeleteAuthor(author);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool AuthorExists(Guid id)
-        {
-            return _context.Authors.Any(e => e.Id == id);
         }
     }
 }
