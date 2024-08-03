@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository.Interfaces;
 
@@ -5,31 +6,31 @@ namespace Online_Library.Repository.Implementations;
 
 public class BooksRepository(ApplicationDbContext context) : IBooksRepository
 {
-    public IEnumerable<Book> GetAllBooks()
+    public async Task<IEnumerable<Book>> GetAllBooks()
     {
-        return context.Books.ToList();
+        return await context.Books.ToListAsync();
     }
 
-    public Book GetBook(Guid id)
+    public async Task<Book?> GetBook(Guid id)
     {
-        return context.Books.FirstOrDefault(b => b.Id == id);
+        return await context.Books.FirstOrDefaultAsync(b => b.Id == id);
     }
 
-    public void InsertBook(Book book)
+    public async Task InsertBook(Book book)
     {
-        context.Books.Add(book);
-        context.SaveChanges();
+        await context.Books.AddAsync(book);
+        await context.SaveChangesAsync();
     }
 
-    public void UpdateBook(Book book)
+    public async Task UpdateBook(Book book)
     {
         context.Books.Update(book);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 
-    public void DeleteBook(Book book)
+    public async Task DeleteBook(Book book)
     {
         context.Books.Remove(book);
-        context.SaveChanges();
+        await context.SaveChangesAsync();
     }
 }

@@ -7,28 +7,28 @@ namespace Online_Library.Service.Implementations;
 
 public class BooksService(IBooksRepository booksRepository) : IBooksService
 {
-    public IEnumerable<Book> GetAllBooks()
+    public async Task<IEnumerable<Book>> GetAllBooks()
     {
-        return booksRepository.GetAllBooks();
+        return await booksRepository.GetAllBooks();
     }
 
-    public Book GetBook(Guid id)
+    public async Task<Book?> GetBook(Guid id)
     {
-        return booksRepository.GetBook(id);
+        return await booksRepository.GetBook(id);
     }
 
-    public void InsertBook(Book book)
+    public async Task InsertBook(Book book)
     {
-        booksRepository.InsertBook(book);
+        await booksRepository.InsertBook(book);
     }
 
-    public void UpdateBook(Book book)
+    public async Task UpdateBook(Book book)
     {
-        booksRepository.UpdateBook(book);
+        await booksRepository.UpdateBook(book);
     }
 
-    public void DeleteBook(Book book)
+    public async Task DeleteBook(Book book)
     {
-        booksRepository.DeleteBook(book);
+        await booksRepository.DeleteBook(book);
     }
 }
