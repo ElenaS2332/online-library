@@ -1,4 +1,5 @@
 using Online_Library.Domain.Entities;
+using Online_Library.Domain.Exceptions;
 using Online_Library.Repository.Interfaces;
 using Online_Library.Service.Interfaces;
 
@@ -23,7 +24,17 @@ public class GenresService(IGenresRepository genresRepository) : IGenresService
 
     public async Task UpdateGenre(Genre genre)
     {
-        await genresRepository.UpdateGenre(genre);
+        var genreFromDatabase = await GetGenre(genre.Id);
+
+        if (genreFromDatabase is null)
+        {
+            throw new GenreNotFoundException();
+        }
+
+        genreFromDatabase.Books = genre.Books;
+        genreFromDatabase.Name = genre.Name;
+        
+        await genresRepository.UpdateGenre(genreFromDatabase);
     }
 
     public async Task DeleteGenre(Genre genre)
