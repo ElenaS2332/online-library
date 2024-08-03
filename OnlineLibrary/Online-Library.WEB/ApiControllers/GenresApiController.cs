@@ -12,7 +12,7 @@ namespace Online_Library.WEB.ApiControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GenreDto>>> GetGenres()
         {
-            var genres = await genresService.GetAllGenres();
+            var genres = await genresService.GetAllGenresAsync();
             var genresDtos = new List<GenreDto>();
             foreach (var genre in genres)
             {
@@ -27,7 +27,7 @@ namespace Online_Library.WEB.ApiControllers
         [HttpGet("{genreId}")]
         public async Task<ActionResult<GenreDto>> GetGenreById(Guid genreId)
         {
-            var genre = await genresService.GetGenre(genreId);
+            var genre = await genresService.GetGenreAsync(genreId);
 
             if (genre is null)
             {
@@ -50,7 +50,7 @@ namespace Online_Library.WEB.ApiControllers
                 Name = genreDto.Name
             };
             
-            await genresService.InsertGenre(genre);
+            await genresService.InsertGenreAsync(genre);
 
             return Ok();
         }
@@ -58,14 +58,14 @@ namespace Online_Library.WEB.ApiControllers
         [HttpPut("{genreId}")]
         public async Task<ActionResult<GenreDto>> UpdateGenre(Guid genreId,GenreDto genreDto)
         {
-            var genre = await genresService.GetGenre(genreId);
+            var genre = await genresService.GetGenreAsync(genreId);
 
             if (genre is null)
             {
                 return NotFound();
             }
             
-            await genresService.UpdateGenre(genre);
+            await genresService.UpdateGenreAsync(genre);
             
             return Ok();
         }
@@ -73,14 +73,14 @@ namespace Online_Library.WEB.ApiControllers
         [HttpDelete("{genreId}")]
         public async Task<ActionResult<GenreDto>> DeleteGenre(Guid genreId)
         {
-            var genre = await genresService.GetGenre(genreId);
+            var genre = await genresService.GetGenreAsync(genreId);
             
             if (genre is null)
             {
                 return NotFound();
             }
             
-            await genresService.DeleteGenre(genre);
+            await genresService.DeleteGenreAsync(genre);
             
             return Ok();
         }

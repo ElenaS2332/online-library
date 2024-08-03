@@ -6,29 +6,37 @@ namespace Online_Library.Repository.Implementations;
 
 public class BooksRepository(ApplicationDbContext context) : IBooksRepository
 {
-    public async Task<IEnumerable<Book>> GetAllBooks()
+    public async Task<IEnumerable<Book>> GetAllBooksAsync()
     {
-        return await context.Books.ToListAsync();
+        return await context.Books
+            .Include(b => b.Author)
+            .Include(b => b.Genre)
+            .ToListAsync();
     }
 
-    public async Task<Book?> GetBook(Guid id)
+    public async Task<Book?> GetBookAsync(Guid id)
     {
-        return await context.Books.FirstOrDefaultAsync(b => b.Id == id);
+        return await context.Books
+            .Include(b => b.Author)
+            .Include(b => b.Genre)
+            .FirstOrDefaultAsync(b => b.Id == id);
     }
 
-    public async Task InsertBook(Book book)
+    public async Task<Book> InsertBookAsync(Book book)
     {
         await context.Books.AddAsync(book);
         await context.SaveChangesAsync();
+        return book;
     }
 
-    public async Task UpdateBook(Book book)
+    public async Task<Book> UpdateBookAsync(Book book)
     {
         context.Books.Update(book);
         await context.SaveChangesAsync();
+        return book;
     }
 
-    public async Task DeleteBook(Book book)
+    public async Task DeleteBookAsync(Book book)
     {
         context.Books.Remove(book);
         await context.SaveChangesAsync();

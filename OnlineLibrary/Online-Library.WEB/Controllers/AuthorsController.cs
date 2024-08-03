@@ -17,13 +17,13 @@ namespace Online_Library.WEB.Controllers
         // GET: Authors
         public async Task<IActionResult> Index()
         {
-            return View(await authorsService.GetAllAuthors());
+            return View(await authorsService.GetAllAuthorsAsync());
         }
 
         // GET: Authors/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            var author = await authorsService.GetAuthor(id);
+            var author = await authorsService.GetAuthorAsync(id);
             if (author == null)
             {
                 return NotFound();
@@ -46,14 +46,14 @@ namespace Online_Library.WEB.Controllers
         public async Task<IActionResult> Create([Bind("Id,Name,Surname,DateOfBirth")] Author author)
         {
             if (!ModelState.IsValid) return View(author);
-            await authorsService.InsertAuthor(author);
+            await authorsService.InsertAuthorAsync(author);
             return RedirectToAction(nameof(Index));
         }
 
         // GET: Authors/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-            var author = await authorsService.GetAuthor(id);
+            var author = await authorsService.GetAuthorAsync(id);
             
             if (author == null)
             {
@@ -78,7 +78,7 @@ namespace Online_Library.WEB.Controllers
             {
                 try
                 {
-                    await authorsService.UpdateAuthor(author);
+                    await authorsService.UpdateAuthorAsync(author);
                 }
                 catch (AuthorNotFoundException)
                 {
@@ -92,7 +92,7 @@ namespace Online_Library.WEB.Controllers
         // GET: Authors/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
-            var author = await authorsService.GetAuthor(id);
+            var author = await authorsService.GetAuthorAsync(id);
             if (author == null)
             {
                 return NotFound();
@@ -106,14 +106,14 @@ namespace Online_Library.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var author = await authorsService.GetAuthor(id);
+            var author = await authorsService.GetAuthorAsync(id);
 
             if (author is null)
             {
                 return NotFound();
             }
 
-            await authorsService.DeleteAuthor(author);
+            await authorsService.DeleteAuthorAsync(author);
             return RedirectToAction(nameof(Index));
         }
     }

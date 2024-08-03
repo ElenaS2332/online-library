@@ -4,9 +4,9 @@ namespace Online_Library.Repository.Interfaces;
 
 public interface IBooksRepository
 {
-    Task<IEnumerable<Book>> GetAllBooks();
-    Task<Book?> GetBook(Guid id);
-    Task InsertBook(Book book);
-    Task UpdateBook(Book book);
-    Task DeleteBook(Book book);
+    Task<IEnumerable<Book>> GetAllBooksAsync();
+    Task<Book?> GetBookAsync(Guid id);
+    Task<Book> InsertBookAsync(Book book);
+    Task<Book> UpdateBookAsync(Book book);
+    Task DeleteBookAsync(Book book);
 }

@@ -17,13 +17,13 @@ namespace Online_Library.WEB.Controllers
         // GET: Genres
         public async Task<IActionResult> Index()
         {
-            return View(await genresService.GetAllGenres());
+            return View(await genresService.GetAllGenresAsync());
         }
 
         // GET: Genres/Details/5
         public async Task<IActionResult> Details(Guid id)
         {
-            var genre = await genresService.GetGenre(id);
+            var genre = await genresService.GetGenreAsync(id);
 
             if (genre == null)
             {
@@ -48,7 +48,7 @@ namespace Online_Library.WEB.Controllers
         {
             if (ModelState.IsValid)
             {
-                await genresService.InsertGenre(genre);
+                await genresService.InsertGenreAsync(genre);
                 return RedirectToAction(nameof(Index));
             }
             return View(genre);
@@ -57,7 +57,7 @@ namespace Online_Library.WEB.Controllers
         // GET: Genres/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
-            var genre = await genresService.GetGenre(id);
+            var genre = await genresService.GetGenreAsync(id);
             if (genre == null)
             {
                 return NotFound();
@@ -81,7 +81,7 @@ namespace Online_Library.WEB.Controllers
             {
                 try
                 {
-                    await genresService.UpdateGenre(genre);
+                    await genresService.UpdateGenreAsync(genre);
                 }
                 catch (GenreNotFoundException)
                 {
@@ -95,7 +95,7 @@ namespace Online_Library.WEB.Controllers
         // GET: Genres/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
-            var genre = await genresService.GetGenre(id);
+            var genre = await genresService.GetGenreAsync(id);
             if (genre == null)
             {
                 return NotFound();
@@ -109,13 +109,13 @@ namespace Online_Library.WEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var genre = await genresService.GetGenre(id);
+            var genre = await genresService.GetGenreAsync(id);
             if (genre is null)
             {
                 return NotFound();
             }
 
-            await genresService.DeleteGenre(genre);
+            await genresService.DeleteGenreAsync(genre);
             return RedirectToAction(nameof(Index));
         }
     }

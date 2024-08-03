@@ -7,24 +7,34 @@ namespace Online_Library.Service.Implementations;
 
 public class AuthorsService(IAuthorsRepository authorsRepository) : IAuthorsService
 {
-    public async Task<IEnumerable<Author>> GetAllAuthors()
+    public IEnumerable<Author> GetAllAuthors()
     {
-        return await authorsRepository.GetAllAuthors();
+        return authorsRepository.GetAllAuthors();
     }
 
-    public async Task<Author?> GetAuthor(Guid id)
+    public Author? GetAuthor(Guid id)
     {
-        return await authorsRepository.GetAuthor(id);
+        return authorsRepository.GetAuthor(id);
     }
 
-    public async Task InsertAuthor(Author author)
+    public async Task<IEnumerable<Author>> GetAllAuthorsAsync()
     {
-        await authorsRepository.InsertAuthor(author);
+        return await authorsRepository.GetAllAuthorsAsync();
     }
 
-    public async Task UpdateAuthor(Author author)
+    public async Task<Author?> GetAuthorAsync(Guid id)
     {
-        var authorFromDatabase = await GetAuthor(author.Id);
+        return await authorsRepository.GetAuthorAsync(id);
+    }
+
+    public async Task InsertAuthorAsync(Author author)
+    {
+        await authorsRepository.InsertAuthorAsync(author);
+    }
+
+    public async Task UpdateAuthorAsync(Author author)
+    {
+        var authorFromDatabase = await GetAuthorAsync(author.Id);
 
         if (authorFromDatabase is null)
         {
@@ -36,11 +46,11 @@ public class AuthorsService(IAuthorsRepository authorsRepository) : IAuthorsServ
         authorFromDatabase.Surname = author.Surname;
         authorFromDatabase.DateOfBirth = author.DateOfBirth;
         
-        await authorsRepository.UpdateAuthor(authorFromDatabase);
+        await authorsRepository.UpdateAuthorAsync(authorFromDatabase);
     }
 
-    public async Task DeleteAuthor(Author author)
+    public async Task DeleteAuthorAsync(Author author)
     {
-        await authorsRepository.DeleteAuthor(author);
+        await authorsRepository.DeleteAuthorAsync(author);
     }
 }

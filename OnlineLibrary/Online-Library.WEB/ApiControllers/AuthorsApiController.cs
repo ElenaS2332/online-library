@@ -13,7 +13,7 @@ namespace Online_Library.WEB.ApiControllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AuthorDto>>> GetAuthors()
         {
-            var authors = await authorsService.GetAllAuthors();
+            var authors = await authorsService.GetAllAuthorsAsync();
             var authorsDtos = new List<AuthorDto>();
             foreach (var author in authors)
             {
@@ -30,7 +30,7 @@ namespace Online_Library.WEB.ApiControllers
         [HttpGet("{authorId}")]
         public async Task<ActionResult<AuthorDto>> GetAuthorById(Guid authorId)
         {
-            var author = await authorsService.GetAuthor(authorId);
+            var author = await authorsService.GetAuthorAsync(authorId);
 
             if (author is null)
             {
@@ -57,7 +57,7 @@ namespace Online_Library.WEB.ApiControllers
                 DateOfBirth = authorDto.DateOfBirth
             };
             
-            await authorsService.InsertAuthor(author);
+            await authorsService.InsertAuthorAsync(author);
 
             return Ok();
         }
@@ -65,7 +65,7 @@ namespace Online_Library.WEB.ApiControllers
         [HttpPut("{authorId}")]
         public async Task<ActionResult<AuthorDto>> UpdateAuthor(Guid authorId, AuthorDto authorDto)
         {
-            var author = await authorsService.GetAuthor(authorId);
+            var author = await authorsService.GetAuthorAsync(authorId);
 
             if (author is null)
             {
@@ -76,7 +76,7 @@ namespace Online_Library.WEB.ApiControllers
             author.Surname = authorDto.Surname;
             author.DateOfBirth = authorDto.DateOfBirth;
             
-            await authorsService.UpdateAuthor(author);
+            await authorsService.UpdateAuthorAsync(author);
             
             return Ok();
         }
@@ -84,14 +84,14 @@ namespace Online_Library.WEB.ApiControllers
         [HttpDelete("{authorId}")]
         public async Task<ActionResult<AuthorDto>> DeleteAuthor(Guid authorId)
         {
-            var author = await authorsService.GetAuthor(authorId);
+            var author = await authorsService.GetAuthorAsync(authorId);
             
             if (author is null)
             {
                 return NotFound();
             }
             
-            await authorsService.DeleteAuthor(author);
+            await authorsService.DeleteAuthorAsync(author);
             
             return Ok();
         }

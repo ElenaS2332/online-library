@@ -7,24 +7,34 @@ namespace Online_Library.Service.Implementations;
 
 public class GenresService(IGenresRepository genresRepository) : IGenresService
 {
-    public async Task<IEnumerable<Genre>> GetAllGenres()
+    public IEnumerable<Genre> GetAllGenres()
     {
-        return await genresRepository.GetAllGenres();
+        return genresRepository.GetAllBGenres();
     }
 
-    public async Task<Genre?> GetGenre(Guid id)
+    public Genre? GetGenre(Guid id)
     {
-        return await genresRepository.GetGenre(id);
+        return genresRepository.GetGenre(id);
     }
 
-    public async Task InsertGenre(Genre genre)
+    public async Task<IEnumerable<Genre>> GetAllGenresAsync()
     {
-        await genresRepository.InsertGenre(genre);
+        return await genresRepository.GetAllGenresAsync();
     }
 
-    public async Task UpdateGenre(Genre genre)
+    public async Task<Genre?> GetGenreAsync(Guid id)
     {
-        var genreFromDatabase = await GetGenre(genre.Id);
+        return await genresRepository.GetGenreAsync(id);
+    }
+    
+    public async Task InsertGenreAsync(Genre genre)
+    {
+        await genresRepository.InsertGenreAsync(genre);
+    }
+
+    public async Task UpdateGenreAsync(Genre genre)
+    {
+        var genreFromDatabase = await GetGenreAsync(genre.Id);
 
         if (genreFromDatabase is null)
         {
@@ -34,11 +44,11 @@ public class GenresService(IGenresRepository genresRepository) : IGenresService
         genreFromDatabase.Books = genre.Books;
         genreFromDatabase.Name = genre.Name;
         
-        await genresRepository.UpdateGenre(genreFromDatabase);
+        await genresRepository.UpdateGenreAsync(genreFromDatabase);
     }
 
-    public async Task DeleteGenre(Genre genre)
+    public async Task DeleteGenreAsync(Genre genre)
     {
-        await genresRepository.DeleteGenre(genre);
+        await genresRepository.DeleteGenreAsync(genre);
     }
 }
