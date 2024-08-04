@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Online_Library.Repository;
 
@@ -11,9 +12,11 @@ using Online_Library.Repository;
 namespace Online_Library.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240804103051_UpdateUserWithSubscriptionChangeToDouble")]
+    partial class UpdateUserWithSubscriptionChangeToDouble
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -228,6 +231,11 @@ namespace Online_Library.Repository.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -237,16 +245,11 @@ namespace Online_Library.Repository.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("SubscriptionType")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Subscriptions");
 
-                    b.HasDiscriminator<string>("SubscriptionType").HasValue("Subscription");
+                    b.HasDiscriminator().HasValue("Subscription");
 
                     b.UseTphMappingStrategy();
                 });
@@ -337,14 +340,14 @@ namespace Online_Library.Repository.Migrations
                 {
                     b.HasBaseType("Online_Library.Domain.Entities.Subscription");
 
-                    b.HasDiscriminator().HasValue("Monthly");
+                    b.HasDiscriminator().HasValue("MonthlySubscription");
                 });
 
             modelBuilder.Entity("Online_Library.Domain.Entities.YearlySubscription", b =>
                 {
                     b.HasBaseType("Online_Library.Domain.Entities.Subscription");
 
-                    b.HasDiscriminator().HasValue("Yearly");
+                    b.HasDiscriminator().HasValue("YearlySubscription");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

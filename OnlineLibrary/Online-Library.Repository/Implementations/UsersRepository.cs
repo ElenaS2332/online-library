@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository.Interfaces;
 
@@ -7,13 +8,17 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
 {
     public IEnumerable<User> GetAllUsers()
     {
-        return context.Users.ToList();
+        return context.Users
+            .Include(u => u.UserSubscription)
+            .ToList();
     }
 
-    public User GetUser(Guid id)
+    public User? GetUser(Guid id)
     {
         // Improve logic for users
-        return context.Users.FirstOrDefault(u => u.Id == id.ToString());
+        return context.Users
+            .Include(u => u.UserSubscription)
+            .FirstOrDefault(u => u.Id == id.ToString());
     }
 
     public void InsertUser(User user)

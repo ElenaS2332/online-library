@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Online_Library.Domain.Entities;
+using Online_Library.Domain.Enums;
 
 namespace Online_Library.WEB.Areas.Identity.Pages.Account
 {
@@ -98,6 +99,25 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            
+            [Required]
+            [StringLength(50)]
+            [Display(Name = "FirstName")]
+            public string FirstName { get; set; }
+            
+            [Required]
+            [StringLength(50)]
+            [Display(Name = "LastName")]
+            public string LastName { get; set; }
+            
+            [Required]
+            [StringLength(200)]
+            [Display(Name = "Address")]
+            public string Address { get; set; }
+            
+            [Required]
+            [Display(Name = "Subscription Type")]
+            public SubscriptionType SubscriptionType { get; set; }
         }
 
 
@@ -159,13 +179,38 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
         {
             try
             {
-                return Activator.CreateInstance<User>();
+                var user = Activator.CreateInstance<User>();
+
+                user.UserSubscription = Input.SubscriptionType switch
+                {
+                    SubscriptionType.Monthly => new MonthlySubscription
+                    {
+                        Id = Guid.NewGuid(),
+                        Price = 9.99, 
+                        StartDate = DateTime.Now,
+                        EndDate = DateTime.Now.AddMonths(1)
+                    },
+                    SubscriptionType.Yearly => new YearlySubscription
+                    {
+                        Id = Guid.NewGuid(),
+                        Price = 99.99, // Example price
+                        StartDate = DateTime.Now,
+                        EndDate = DateTime.Now.AddYears(1)
+                    },
+                    _ => throw new InvalidOperationException("Invalid subscription type.")
+                };
+
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                user.Address = Input.Address;
+                
+                return user;
             }
             catch
             {
                 throw new InvalidOperationException($"Can't create an instance of '{nameof(User)}'. " +
-                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor, or alternatively " +
-                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
+                                                    $"Ensure that '{nameof(User)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                                                    $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 

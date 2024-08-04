@@ -11,7 +11,7 @@ public class UsersService(IUsersRepository usersRepository) : IUsersService
         return usersRepository.GetAllUsers();
     }
 
-    public User GetUser(Guid id)
+    public User? GetUser(Guid id)
     {
         return usersRepository.GetUser(id);
     }

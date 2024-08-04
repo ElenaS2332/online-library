@@ -14,7 +14,10 @@ var connectionString = builder.Configuration.GetConnectionString("OnlineLibraryD
                        ?? throw new InvalidOperationException("Connection string 'OnlineLibraryDBConnectionString' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(
+        connectionString,
+        sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()
+        ));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
