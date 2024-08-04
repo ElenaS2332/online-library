@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.Controllers
 {
+    [Authorize]
     public class GenresController(IGenresService genresService) : Controller
     {
         // GET: Genres

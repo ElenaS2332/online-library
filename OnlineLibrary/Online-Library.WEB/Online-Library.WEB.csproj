@@ -35,4 +35,8 @@
 	  <None Include="appsettings.db.json" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Pages\" />
+	</ItemGroup>
+
 </Project>
