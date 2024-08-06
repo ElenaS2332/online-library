@@ -17,6 +17,9 @@ namespace Online_Library.Repository
         public DbSet<MonthlySubscription> MonthlySubscriptions { get; set; }
         public DbSet<YearlySubscription> YearlySubscriptions { get; set; }
 
+        public DbSet<ReadingList> ReadingLists { get; set; }
+        public DbSet<BooksInReadingList> BooksInReadingLists { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

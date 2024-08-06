@@ -9,4 +9,6 @@ public class Book
     public string? Description { get; set; }
     public virtual Author? Author { get; set; }
     public virtual Genre? Genre { get; set; }
+
+    public virtual ICollection<BooksInReadingList>? BookInReadingLists { get; set; }
 }

@@ -12,5 +12,11 @@ public class User : IdentityUser
     public string? LastName { get; set; }
     [MaxLength(200)]
     public string? Address { get; set; }
+    
+    public Guid? UserSubscriptionId { get; set; }
     public Subscription? UserSubscription { get; set; }
+    
+    public Guid? ReadingListId { get; set; }
+
+    public ReadingList? ReadingList { get; set; }
 }

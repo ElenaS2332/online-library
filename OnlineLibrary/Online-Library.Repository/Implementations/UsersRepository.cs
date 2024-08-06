@@ -13,11 +13,12 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
             .ToList();
     }
 
-    public User? GetUser(Guid id)
+    public User GetUser(string id)
     {
         // Improve logic for users
         return context.Users
             .Include(u => u.UserSubscription)
+            .Include(u => u.ReadingList)
             .FirstOrDefault(u => u.Id == id.ToString());
     }
 

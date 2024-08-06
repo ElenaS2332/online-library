@@ -13,7 +13,7 @@ using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class GenresController(IGenresService genresService) : Controller
     {
         // GET: Genres

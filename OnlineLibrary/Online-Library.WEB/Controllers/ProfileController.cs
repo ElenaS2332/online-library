@@ -8,7 +8,7 @@ using Online_Library.Repository;
 
 namespace Online_Library.WEB.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class ProfileController(UserManager<User> userManager, ApplicationDbContext dbContext)
         : Controller
     {

@@ -35,6 +35,10 @@ builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddTransient<IGenresService, GenresService>();
 
 
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

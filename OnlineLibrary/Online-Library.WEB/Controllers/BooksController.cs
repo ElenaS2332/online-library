@@ -14,7 +14,7 @@ using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.Controllers
 {
-    [Authorize]
+    // [Authorize]
     public class BooksController(
         IBooksService booksService, 
         IAuthorsService authorsService,

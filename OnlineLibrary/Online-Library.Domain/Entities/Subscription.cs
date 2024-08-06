@@ -7,4 +7,7 @@ public abstract class Subscription
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public abstract string GetSubscriptionDetails();
+    
+    public Guid? UserId { get; set; }
+    public User? User { get; set; }
 }
