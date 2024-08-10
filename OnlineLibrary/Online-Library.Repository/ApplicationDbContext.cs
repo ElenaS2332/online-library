@@ -29,6 +29,11 @@ namespace Online_Library.Repository
                 .HasDiscriminator<string>("SubscriptionType")
                 .HasValue<MonthlySubscription>("Monthly")
                 .HasValue<YearlySubscription>("Yearly");
+            
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.ReadingList)
+                .WithOne(r => r.User)
+                .HasForeignKey<User>(u => u.ReadingListId);
         }
     }
 }

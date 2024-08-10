@@ -9,7 +9,8 @@ namespace Online_Library.Service.Implementations;
 public class ReadingListService(
     IUsersRepository usersRepository,
     IBooksInReadingListRepository booksInReadingListRepository,
-    IReadingListRepository readingListRepository) : IReadingListService
+    IReadingListRepository readingListRepository,
+    IBooksService booksService) : IReadingListService
 {
     public bool AddToReadingListConfirmed(BooksInReadingList model, string userId)
     {
@@ -18,17 +19,18 @@ public class ReadingListService(
 
         var userReadingList = loggedInUser.ReadingList;
 
-        if (userReadingList is null)
-        {
-            // throw new ReadingListNotFoundException();
-            return false;
-        }
+        userReadingList.UserId = loggedInUser.Id;
+        userReadingList.BooksInReadingList ??= new List<BooksInReadingList>(); ;
         
-        if (userReadingList.BooksInReadingList is null)
-            userReadingList.BooksInReadingList = new List<BooksInReadingList>(); ;
-
+        model.Book = booksService.GetBook(model.BookId);
+        model.ReadingList = userReadingList;
+        
         userReadingList.BooksInReadingList.Add(model);
-        readingListRepository.UpdateReadingList(userReadingList);
+        loggedInUser.ReadingList = userReadingList;
+        
+        usersRepository.UpdateUser(loggedInUser);
+        var allReadingLists = readingListRepository.GetAllReadingLists();
+        // readingListRepository.UpdateReadingList(userReadingList);
         return true;
     }
     

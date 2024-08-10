@@ -21,7 +21,8 @@ namespace Online_Library.WEB.Controllers
         IBooksService booksService, 
         IAuthorsService authorsService,
         IGenresService genresService,
-        IReadingListService readingListService) : Controller
+        IReadingListService readingListService,
+        IUsersService usersService) : Controller
     {
         // GET: Books
         public async Task<IActionResult> Index()
@@ -184,14 +185,29 @@ namespace Online_Library.WEB.Controllers
             }
 
             var book = await booksService.GetBookAsync(id.Value);
-            
-            BooksInReadingList booksInReadingList = new BooksInReadingList();
 
-            if (book != null)
+            if (book is null)
             {
-                booksInReadingList.BookId = book.Id;
-                booksInReadingList.Book = book;
+                return NotFound();
             }
+            
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId is null)
+            {
+                return NotFound();
+            }
+            
+            var loggedInUser = usersService.GetUser(userId);
+
+
+            BooksInReadingList booksInReadingList = new BooksInReadingList
+            {
+                Id = new Guid(),
+                BookId = book.Id,
+                Book = book,
+                ReadingList = loggedInUser.ReadingList,
+                ReadingListId = loggedInUser.ReadingList.Id
+            };
 
             return View(booksInReadingList);
         }
@@ -204,9 +220,14 @@ namespace Online_Library.WEB.Controllers
             {
                 return NotFound();
             }
-            readingListService.AddToReadingListConfirmed(model, userId);
+            var isAdded = readingListService.AddToReadingListConfirmed(model, userId);
+
+            if (!isAdded)
+            {
+                return NotFound();
+            }
             
-            return View("Index", await booksService.GetAllBooksAsync());
+            return RedirectToAction("Index", "ReadingList");
         }
     }
 }

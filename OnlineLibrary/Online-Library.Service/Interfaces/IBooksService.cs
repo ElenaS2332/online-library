@@ -5,6 +5,7 @@ namespace Online_Library.Service.Interfaces;
 
 public interface IBooksService
 {
+    Book GetBook(Guid id);
     Task<IEnumerable<Book>> GetAllBooksAsync();
     Task<Book?> GetBookAsync(Guid id);
     Task<Book> InsertBookAsync(BookDto bookDto);

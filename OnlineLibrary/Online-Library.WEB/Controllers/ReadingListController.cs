@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,10 @@ public class ReadingListController(
     // GET
     public IActionResult Index()
     {
-        var userId = User.Identity?.Name ?? "";
-        if (string.IsNullOrEmpty(userId))
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId is null)
         {
-            return Unauthorized();
+            return NotFound();
         }
 
         var readingList = readingListService.GetReadingListInfo(userId);

@@ -6,6 +6,14 @@ namespace Online_Library.Repository.Implementations;
 
 public class BooksRepository(ApplicationDbContext context) : IBooksRepository
 {
+    public Book GetBook(Guid id)
+    {
+        return context.Books
+            .Include(b => b.Author)
+            .Include(b => b.Genre)
+            .FirstOrDefault(b => b.Id == id);    
+    }
+
     public async Task<IEnumerable<Book>> GetAllBooksAsync()
     {
         return await context.Books

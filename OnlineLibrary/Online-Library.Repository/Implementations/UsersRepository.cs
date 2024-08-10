@@ -19,7 +19,7 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
         var user = context.Users
             .Include(u => u.UserSubscription)
             .Include(u => u.ReadingList)
-            .FirstOrDefault(u => u.Email == id);
+            .FirstOrDefault(u => u.Id == id);
         return user;
     }
 
