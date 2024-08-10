@@ -203,6 +203,7 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
                 user.Address = Input.Address;
+                user.ReadingList = new ReadingList();
                 
                 return user;
             }

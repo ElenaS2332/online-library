@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Online_Library.Repository;
 
@@ -11,9 +12,11 @@ using Online_Library.Repository;
 namespace Online_Library.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240806185217_RemoveCountFromModel")]
+    partial class RemoveCountFromModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -343,7 +346,7 @@ namespace Online_Library.Repository.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("ReadingListId")
+                    b.Property<Guid?>("ReadingListId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SecurityStamp")
@@ -356,7 +359,7 @@ namespace Online_Library.Repository.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<Guid>("UserSubscriptionId")
+                    b.Property<Guid?>("UserSubscriptionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -370,10 +373,12 @@ namespace Online_Library.Repository.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.HasIndex("ReadingListId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ReadingListId] IS NOT NULL");
 
                     b.HasIndex("UserSubscriptionId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[UserSubscriptionId] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -481,15 +486,11 @@ namespace Online_Library.Repository.Migrations
                 {
                     b.HasOne("Online_Library.Domain.Entities.ReadingList", "ReadingList")
                         .WithOne("User")
-                        .HasForeignKey("Online_Library.Domain.Entities.User", "ReadingListId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Online_Library.Domain.Entities.User", "ReadingListId");
 
                     b.HasOne("Online_Library.Domain.Entities.Subscription", "UserSubscription")
                         .WithOne("User")
-                        .HasForeignKey("Online_Library.Domain.Entities.User", "UserSubscriptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Online_Library.Domain.Entities.User", "UserSubscriptionId");
 
                     b.Navigation("ReadingList");
 

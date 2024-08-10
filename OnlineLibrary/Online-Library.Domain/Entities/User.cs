@@ -13,10 +13,15 @@ public class User : IdentityUser
     [MaxLength(200)]
     public string? Address { get; set; }
     
-    public Guid? UserSubscriptionId { get; set; }
-    public Subscription? UserSubscription { get; set; }
+    [Required]
+    public Guid UserSubscriptionId { get; set; }
     
-    public Guid? ReadingListId { get; set; }
+    [Required]
+    public Subscription UserSubscription { get; set; }
+    
+    [Required]
+    public Guid ReadingListId { get; set; }
 
-    public ReadingList? ReadingList { get; set; }
+    [Required]
+    public ReadingList ReadingList { get; set; }
 }

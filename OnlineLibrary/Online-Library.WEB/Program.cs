@@ -24,15 +24,19 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+// Add other repositories and services
+builder.Services.AddScoped<IBooksInReadingListRepository, BooksInReadingListRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IAuthorsRepository, AuthorsRepository>();
 builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IGenresRepository, GenresRepository>();
+builder.Services.AddScoped<IReadingListRepository, ReadingListRepository>();
 
 builder.Services.AddTransient<IUsersService, UsersService>();
 builder.Services.AddTransient<IAuthorsService, AuthorsService>();
 builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddTransient<IGenresService, GenresService>();
+builder.Services.AddTransient<IReadingListService, ReadingListService>();
 
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>

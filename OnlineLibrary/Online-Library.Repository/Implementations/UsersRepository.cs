@@ -16,10 +16,11 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
     public User GetUser(string id)
     {
         // Improve logic for users
-        return context.Users
+        var user = context.Users
             .Include(u => u.UserSubscription)
             .Include(u => u.ReadingList)
-            .FirstOrDefault(u => u.Id == id.ToString());
+            .FirstOrDefault(u => u.Email == id);
+        return user;
     }
 
     public void InsertUser(User user)

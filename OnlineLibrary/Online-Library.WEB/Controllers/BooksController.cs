@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using Online_Library.Domain.Dtos;
 using Online_Library.Domain.Entities;
 using Online_Library.Domain.Exceptions;
 using Online_Library.Repository;
+using Online_Library.Repository.Interfaces;
 using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.Controllers
@@ -18,7 +20,8 @@ namespace Online_Library.WEB.Controllers
     public class BooksController(
         IBooksService booksService, 
         IAuthorsService authorsService,
-        IGenresService genresService) : Controller
+        IGenresService genresService,
+        IReadingListService readingListService) : Controller
     {
         // GET: Books
         public async Task<IActionResult> Index()
@@ -64,11 +67,11 @@ namespace Online_Library.WEB.Controllers
                 {
                     book = await booksService.InsertBookAsync(bookDto);
                 }
-                catch (AuthorNotFoundException authorNotFoundException)
+                catch (AuthorNotFoundException)
                 {
                     return NotFound();
                 }
-                catch (GenreNotFoundException genreNotFoundException)
+                catch (GenreNotFoundException)
                 {
                     return NotFound();
                 }
@@ -170,6 +173,40 @@ namespace Online_Library.WEB.Controllers
 
             await booksService.DeleteBookAsync(book);
             return RedirectToAction(nameof(Index));
+        }
+        
+        
+        public async Task<IActionResult> AddToReadingList(Guid? id)
+        {
+            if (id is null)
+            {
+                return NotFound();
+            }
+
+            var book = await booksService.GetBookAsync(id.Value);
+            
+            BooksInReadingList booksInReadingList = new BooksInReadingList();
+
+            if (book != null)
+            {
+                booksInReadingList.BookId = book.Id;
+                booksInReadingList.Book = book;
+            }
+
+            return View(booksInReadingList);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToReadingListConfirmed(BooksInReadingList model)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId is null)
+            {
+                return NotFound();
+            }
+            readingListService.AddToReadingListConfirmed(model, userId);
+            
+            return View("Index", await booksService.GetAllBooksAsync());
         }
     }
 }
