@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Online_Library.Domain;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository;
 using Online_Library.Repository.Implementations;
@@ -9,7 +10,10 @@ using Online_Library.Service.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("StripeSettings"));
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
+
 var connectionString = builder.Configuration.GetConnectionString("OnlineLibraryDBConnectionString") 
                        ?? throw new InvalidOperationException("Connection string 'OnlineLibraryDBConnectionString' not found.");
 
@@ -38,6 +42,7 @@ builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddTransient<IGenresService, GenresService>();
 builder.Services.AddTransient<IReadingListService, ReadingListService>();
 
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

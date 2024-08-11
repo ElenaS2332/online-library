@@ -1,0 +1,43 @@
+@{
+    ViewBag.Title = "Payment";
+}
+
+<h2>Complete Your Payment</h2>
+
+<form id="payment-form">
+    <div id="card-element">
+        <!--Stripe.js injects the Card Element-->
+    </div>
+    <button id="submit">Pay</button>
+</form>
+
+@section Scripts {
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('@ViewBag.PublishableKey');
+        var elements = stripe.elements();
+        var cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.confirmCardPayment('@ViewBag.ClientSecret', {
+                payment_method: {
+                    card: cardElement
+                }
+            }).then(function(result) {
+                if (result.error) {
+                    // Show error to your customer
+                    console.log(result.error.message);
+                } else {
+                    if (result.paymentIntent.status === 'succeeded') {
+                        // Redirect or display success message
+                        window.location.href = '@Url.Action("Success", "Payment")';
+                    }
+                }
+            });
+        });
+    </script>
+}

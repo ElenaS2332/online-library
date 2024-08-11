@@ -157,7 +157,12 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        // return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                        return RedirectToAction("Index", "Payment", new 
+                        { 
+                            userId = userId,
+                            subscriptionType = Input.SubscriptionType.ToString() 
+                        });
                     }
                     else
                     {
@@ -174,6 +179,7 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+        
 
         private User CreateUser()
         {
