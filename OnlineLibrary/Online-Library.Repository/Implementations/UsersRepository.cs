@@ -40,4 +40,9 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
         context.Users.Remove(user);
         context.SaveChanges();
     }
+
+    public void SaveChanges()
+    {
+        context.SaveChanges();
+    }
 }

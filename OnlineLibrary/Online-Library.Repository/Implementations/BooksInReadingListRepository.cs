@@ -32,4 +32,11 @@ public class BooksInReadingListRepository(ApplicationDbContext context) : IBooks
         context.BooksInReadingLists.Remove(booksInReadingList);
         context.SaveChanges();
     }
+
+    public IEnumerable<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId)
+    {
+        return context.BooksInReadingLists
+            .FirstOrDefault(b => b.ReadingListId == readingListId)
+            .ReadingList.BooksInReadingList;
+    }
 }

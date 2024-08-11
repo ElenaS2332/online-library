@@ -18,11 +18,19 @@ public class ReadingListService(
         var loggedInUser = usersRepository.GetUser(userId);
 
         var userReadingList = loggedInUser.ReadingList;
-
+        
         userReadingList.UserId = loggedInUser.Id;
         userReadingList.BooksInReadingList ??= new List<BooksInReadingList>(); ;
+        var book = booksService.GetBook(model.BookId);
         
-        model.Book = booksService.GetBook(model.BookId);
+        var readingList = new ReadingList
+        {
+            UserId = loggedInUser.Id,
+            User = loggedInUser,
+            BooksInReadingList = new List<BooksInReadingList>()
+        };
+        readingList.BooksInReadingList.Add(model);
+        
         model.ReadingList = userReadingList;
         
         userReadingList.BooksInReadingList.Add(model);
@@ -78,6 +86,8 @@ public class ReadingListService(
             throw new ReadingListNotFoundException();
         }        
         
+        // var allBooks = booksInReadingListRepository.GetBooksInReadingListByReadingList(userReadingList.Id);
+
         var allBooks= userReadingList.BooksInReadingList?.ToList();
         var totalCount = 0;
         
@@ -95,7 +105,8 @@ public class ReadingListService(
         return dto;
     }
 
-
-    
-    
+    public void SaveChanges()
+    {
+        readingListRepository.SaveChanges();
+    }
 }

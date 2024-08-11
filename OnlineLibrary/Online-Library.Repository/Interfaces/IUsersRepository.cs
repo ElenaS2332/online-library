@@ -9,4 +9,6 @@ public interface IUsersRepository
     void InsertUser(User user);
     void UpdateUser(User user);
     void DeleteUser(User user);
+
+    void SaveChanges();
 }

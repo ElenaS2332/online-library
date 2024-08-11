@@ -29,4 +29,9 @@ public class ReadingListRepository(ApplicationDbContext context) : IReadingListR
         
         // context.SaveChanges();
     }
+
+    public void SaveChanges()
+    {
+        context.SaveChanges();
+    }
 }

@@ -7,4 +7,6 @@ public interface IReadingListRepository
     IEnumerable<ReadingList> GetAllReadingLists();
     ReadingList? GetReadingList(Guid id);
     void UpdateReadingList(ReadingList readingList);
+
+    void SaveChanges();
 }

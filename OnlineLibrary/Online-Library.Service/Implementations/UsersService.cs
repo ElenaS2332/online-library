@@ -30,4 +30,9 @@ public class UsersService(IUsersRepository usersRepository) : IUsersService
     {
         usersRepository.DeleteUser(user);
     }
+
+    public void SaveChanges()
+    {
+        usersRepository.SaveChanges();
+    }
 }

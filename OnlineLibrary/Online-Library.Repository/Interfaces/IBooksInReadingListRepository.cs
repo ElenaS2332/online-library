@@ -9,4 +9,6 @@ public interface IBooksInReadingListRepository
     void InsertBooksInReadingList(BooksInReadingList booksInReadingList);
     void UpdateBooksInReadingList(BooksInReadingList booksInReadingList);
     void DeleteBooksInReadingList(BooksInReadingList booksInReadingList);
+
+    IEnumerable<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId);
 }

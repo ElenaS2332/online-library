@@ -22,7 +22,8 @@ namespace Online_Library.WEB.Controllers
         IAuthorsService authorsService,
         IGenresService genresService,
         IReadingListService readingListService,
-        IUsersService usersService) : Controller
+        IUsersService usersService,
+        IBooksInReadingListRepository booksInReadingListRepository) : Controller
     {
         // GET: Books
         public async Task<IActionResult> Index()
@@ -202,7 +203,7 @@ namespace Online_Library.WEB.Controllers
 
             BooksInReadingList booksInReadingList = new BooksInReadingList
             {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 BookId = book.Id,
                 Book = book,
                 ReadingList = loggedInUser.ReadingList,
@@ -213,21 +214,51 @@ namespace Online_Library.WEB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToReadingListConfirmed(BooksInReadingList model)
+        public IActionResult AddToReadingListConfirmed(BooksInReadingList model)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId is null)
             {
                 return NotFound();
             }
-            var isAdded = readingListService.AddToReadingListConfirmed(model, userId);
 
-            if (!isAdded)
-            {
-                return NotFound();
-            }
+            var loggedInUser = usersService.GetUser(userId);
+
+            loggedInUser.ReadingList.BooksInReadingList ??= new List<BooksInReadingList>();
             
+            // Check if the book already exists in the reading list to avoid duplicates
+            if (loggedInUser.ReadingList.BooksInReadingList.Any(b => b.BookId == model.BookId))
+            {
+                // Optionally, return a message indicating the book is already in the list
+                return RedirectToAction("Index", "ReadingList");
+            }
+
+            // Attach the book entity to the context if it's not already tracked
+            var book = booksService.GetBook(model.BookId);
+            if (book == null)
+            {
+                return NotFound(); // Handle case where the book does not exist
+            }
+
+            model.Book = book;
+            model.ReadingList = loggedInUser.ReadingList;
+
+            loggedInUser.ReadingList.BooksInReadingList.Add(model);
+
+            try
+            {
+                // usersService.SaveChanges();
+                booksInReadingListRepository.InsertBooksInReadingList(model);
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                // Handle concurrency exception, for example by reloading the entity and retrying
+                ModelState.AddModelError("", "A concurrency error occurred. Please try again.");
+                return RedirectToAction("Index", "ReadingList");
+            }
+
             return RedirectToAction("Index", "ReadingList");
         }
+
     }
 }

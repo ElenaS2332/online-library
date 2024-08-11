@@ -9,4 +9,6 @@ public interface IUsersService
     void InsertUser(User user);
     void UpdateUser(User user);
     void DeleteUser(User user);
+
+    void SaveChanges();
 }
