@@ -10,5 +10,7 @@ public interface IBooksInReadingListRepository
     void UpdateBooksInReadingList(BooksInReadingList booksInReadingList);
     void DeleteBooksInReadingList(BooksInReadingList booksInReadingList);
 
-    IEnumerable<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId);
+    List<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId);
+
+    bool BookExistInReadingList(Guid id);
 }

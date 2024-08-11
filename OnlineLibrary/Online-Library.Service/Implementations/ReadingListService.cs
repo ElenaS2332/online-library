@@ -86,15 +86,12 @@ public class ReadingListService(
             throw new ReadingListNotFoundException();
         }        
         
-        // var allBooks = booksInReadingListRepository.GetBooksInReadingListByReadingList(userReadingList.Id);
+        var allBooks = booksInReadingListRepository
+            .GetAllBooksInReadingListByReadingList(userReadingList.Id);
 
-        var allBooks= userReadingList.BooksInReadingList?.ToList();
-        var totalCount = 0;
+        // var allBooks= userReadingList.BooksInReadingList?.ToList();
         
-        if (allBooks is not null)
-        {
-             totalCount= allBooks.Count;
-        }
+        var totalCount = allBooks.Count();
 
         ReadingListDto dto = new ReadingListDto
         {

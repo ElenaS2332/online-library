@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Online_Library.Domain.Entities;
 using Online_Library.Repository.Interfaces;
 
@@ -33,10 +34,16 @@ public class BooksInReadingListRepository(ApplicationDbContext context) : IBooks
         context.SaveChanges();
     }
 
-    public IEnumerable<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId)
+    public List<BooksInReadingList> GetAllBooksInReadingListByReadingList(Guid readingListId)
     {
         return context.BooksInReadingLists
-            .FirstOrDefault(b => b.ReadingListId == readingListId)
-            .ReadingList.BooksInReadingList;
+            .Where(b => b.ReadingListId == readingListId)
+            .Include(b => b.Book)
+            .ToList();
+    }
+
+    public bool BookExistInReadingList(Guid id)
+    {
+        return context.BooksInReadingLists.Any(b => b.Id == id);
     }
 }

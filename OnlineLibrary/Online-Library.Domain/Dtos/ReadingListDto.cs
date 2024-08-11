@@ -5,5 +5,5 @@ namespace Online_Library.Domain.Dtos;
 public class ReadingListDto
 {
     public int Count { get; set; }
-    public List<BooksInReadingList>? BooksInReadingList { get; set; }
+    public List<BooksInReadingList> BooksInReadingList { get; set; }
 }

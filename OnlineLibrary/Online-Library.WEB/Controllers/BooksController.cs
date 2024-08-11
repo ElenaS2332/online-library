@@ -248,7 +248,10 @@ namespace Online_Library.WEB.Controllers
             try
             {
                 // usersService.SaveChanges();
-                booksInReadingListRepository.InsertBooksInReadingList(model);
+                if (!booksInReadingListRepository.BookExistInReadingList(model.Id))
+                {
+                    booksInReadingListRepository.InsertBooksInReadingList(model);
+                }
             }
             catch (DbUpdateConcurrencyException ex)
             {
