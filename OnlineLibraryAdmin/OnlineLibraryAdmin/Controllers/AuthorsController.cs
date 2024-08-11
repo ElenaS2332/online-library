@@ -14,7 +14,7 @@ public class AuthorsController : Controller
         return View();
     }
     
-    public IActionResult ImportGenres(IFormFile file)
+    public IActionResult ImportAuthors(IFormFile file)
     {
         string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
 
@@ -24,21 +24,21 @@ public class AuthorsController : Controller
             fileStream.Flush();
         }
 
-        List<Author> authors = getAllAuthorsFromFile(file.FileName);
+        List<Author> authors = GetAllAuthorsFromFile(file.FileName);
         HttpClient client = new HttpClient();
-        string URL = "https://localhost:44369/api/Admin/ImportAllUsers";
-
+        string url = "http://localhost:5042/api/Admin/ImportAuthors";
+        
         HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
 
-        HttpResponseMessage response = client.PostAsync(URL, content).Result;
+        HttpResponseMessage response = client.PostAsync(url, content).Result;
 
         var result = response.Content.ReadAsAsync<bool>().Result;
 
-        return RedirectToAction("Index", "Order");
+        return RedirectToAction("Index", "Authors");
 
     }
 
-    private List<Author> getAllAuthorsFromFile(string fileName)
+    private List<Author> GetAllAuthorsFromFile(string fileName)
     {
         List<Author> authors = new List<Author>();
         string filePath = $"{Directory.GetCurrentDirectory()}\\files\\{fileName}";
@@ -54,6 +54,8 @@ public class AuthorsController : Controller
                     authors.Add(new Models.Author
                     {
                         Name = reader.GetValue(0).ToString(),
+                        Surname = reader.GetValue(1).ToString(),
+                        DateOfBirth = DateTime.Parse(reader.GetValue(2).ToString())
                     });
                 }
 

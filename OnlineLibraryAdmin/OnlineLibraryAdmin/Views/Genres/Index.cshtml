@@ -1,0 +1,12 @@
+@model dynamic
+
+@{
+    Layout = "_Layout";
+}
+
+<form asp-controller="Genres" asp-action="ImportGenres" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input required type="file" name="file" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-success">Import Genres</button>
+</form>

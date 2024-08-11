@@ -6,6 +6,7 @@ public interface IGenresService
 {
     IEnumerable<Genre> GetAllGenres();
     Genre? GetGenre(Guid id);
+    Genre? GetGenreByName(String name);
     Task<IEnumerable<Genre>> GetAllGenresAsync();
     Task<Genre?> GetGenreAsync(Guid id);
     Task InsertGenreAsync(Genre genre);

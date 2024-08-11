@@ -24,21 +24,21 @@ public class GenresController : Controller
             fileStream.Flush();
         }
 
-        List<Genre> genres = getAllGenresFromFile(file.FileName);
+        List<Genre> genres = GetAllGenresFromFile(file.FileName);
         HttpClient client = new HttpClient();
-        string URL = "https://localhost:44369/api/Admin/ImportAllUsers";
+        string url = "http://localhost:5042/api/Admin/ImportGenres";
 
         HttpContent content = new StringContent(JsonConvert.SerializeObject(genres), Encoding.UTF8, "application/json");
 
-        HttpResponseMessage response = client.PostAsync(URL, content).Result;
+        HttpResponseMessage response = client.PostAsync(url, content).Result;
 
         var result = response.Content.ReadAsAsync<bool>().Result;
 
-        return RedirectToAction("Index", "Order");
+        return RedirectToAction("Index", "Genres");
 
     }
 
-    private List<Genre> getAllGenresFromFile(string fileName)
+    private List<Genre> GetAllGenresFromFile(string fileName)
     {
         List<Genre> genres = new List<Genre>();
         string filePath = $"{Directory.GetCurrentDirectory()}\\files\\{fileName}";

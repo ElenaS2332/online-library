@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/Views/Authors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/Views/Genres/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

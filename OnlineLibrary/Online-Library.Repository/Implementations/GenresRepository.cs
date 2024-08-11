@@ -16,6 +16,11 @@ public class GenresRepository(ApplicationDbContext context) : IGenresRepository
         return context.Genres.FirstOrDefault(g => g.Id == id);
     }
 
+    public Genre? GetGenreByName(string name)
+    {
+        return context.Genres.FirstOrDefault(g => g.Name == name);
+    }
+
     public async Task<IEnumerable<Genre>> GetAllGenresAsync()
     {
         return await context.Genres.ToListAsync();

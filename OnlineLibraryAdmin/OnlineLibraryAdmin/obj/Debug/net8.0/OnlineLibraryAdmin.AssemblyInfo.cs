@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineLibraryAdmin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a21231acda290ad6549f5e1620ac2fbafb768b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+784d9e9a2931980ef79c42f66ded130ba5a16b41")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineLibraryAdmin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineLibraryAdmin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

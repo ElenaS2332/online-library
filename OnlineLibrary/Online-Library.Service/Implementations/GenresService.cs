@@ -7,6 +7,7 @@ namespace Online_Library.Service.Implementations;
 
 public class GenresService(IGenresRepository genresRepository) : IGenresService
 {
+    
     public IEnumerable<Genre> GetAllGenres()
     {
         return genresRepository.GetAllBGenres();
@@ -15,6 +16,11 @@ public class GenresService(IGenresRepository genresRepository) : IGenresService
     public Genre? GetGenre(Guid id)
     {
         return genresRepository.GetGenre(id);
+    }
+
+    public Genre? GetGenreByName(string name)
+    {
+        return genresRepository.GetGenreByName(name);
     }
 
     public async Task<IEnumerable<Genre>> GetAllGenresAsync()

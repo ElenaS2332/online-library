@@ -1,0 +1,59 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Online_Library.Domain.Dtos;
+using Online_Library.Domain.Entities;
+using Online_Library.Service.Interfaces;
+
+namespace Online_Library.WEB.ApiControllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AdminController(IGenresService genresService, IAuthorsService authorsService) : ControllerBase
+    {
+        [HttpPost("[action]")]
+        public async Task ImportGenres(List<GenreDto> model)
+        {
+            foreach (var item in model)
+            {
+                if (item.Name is null)
+                {
+                    continue;
+                }
+                
+                var genreCheck = genresService.GetGenreByName(item.Name);
+
+                if (genreCheck is null) {
+                    var genre = new Genre
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = item.Name
+                    };
+
+                    await genresService.InsertGenreAsync(genre);
+                }
+            }
+        }
+        
+        [HttpPost("[action]")]
+        public async Task ImportAuthors(List<AuthorDto> model)
+        {
+            foreach (var item in model)
+            {
+                if (item.Name is null || item.Surname is null)
+                {
+                    continue;
+                }
+
+                var author = new Author
+                {
+                    Id = Guid.NewGuid(),
+                    Name = item.Name,
+                    Surname = item.Surname,
+                    DateOfBirth = item.DateOfBirth
+                };
+
+                await authorsService.InsertAuthorAsync(author);
+            }
+        }
+    }
+}
