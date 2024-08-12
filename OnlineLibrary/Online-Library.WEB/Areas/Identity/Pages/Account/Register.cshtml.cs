@@ -192,14 +192,14 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
                     SubscriptionType.Monthly => new MonthlySubscription
                     {
                         Id = Guid.NewGuid(),
-                        Price = 9.99, 
+                        Price = 8, 
                         StartDate = DateTime.Now,
                         EndDate = DateTime.Now.AddMonths(1)
                     },
                     SubscriptionType.Yearly => new YearlySubscription
                     {
                         Id = Guid.NewGuid(),
-                        Price = 99.99, // Example price
+                        Price = 60,
                         StartDate = DateTime.Now,
                         EndDate = DateTime.Now.AddYears(1)
                     },

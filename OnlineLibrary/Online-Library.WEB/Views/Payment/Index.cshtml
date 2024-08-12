@@ -1,43 +1,56 @@
+@model Online_Library.Domain.PaymentViewModel
+
 @{
-    ViewBag.Title = "Payment";
+ViewBag.Title = "Complete Your Payment";
 }
 
 <h2>Complete Your Payment</h2>
 
 <form id="payment-form">
     <div id="card-element">
-        <!--Stripe.js injects the Card Element-->
+        <!--Stripe.js will inject the Card Element here-->
     </div>
     <button id="submit">Pay</button>
 </form>
 
 @section Scripts {
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        var stripe = Stripe('@ViewBag.PublishableKey');
-        var elements = stripe.elements();
-        var cardElement = elements.create('card');
-        cardElement.mount('#card-element');
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // Initialize Stripe with your publishable key
+    var stripe = Stripe('@Model.PublishableKey');
 
-        var form = document.getElementById('payment-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+    // Create an instance of Elements
+    var elements = stripe.elements();
 
-            stripe.confirmCardPayment('@ViewBag.ClientSecret', {
-                payment_method: {
-                    card: cardElement
+    // Create an instance of the card Element and hide the postal code field
+    var cardElement = elements.create('card', {
+        hidePostalCode: true
+    });
+
+    // Mount the card Element to the DOM
+    cardElement.mount('#card-element');
+
+    // Handle form submission
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Confirm the card payment using the client secret
+        stripe.confirmCardPayment('@Model.ClientSecret', {
+            payment_method: {
+                card: cardElement
+            }
+        }).then(function(result) {
+            if (result.error) {
+                // Display error to your customer
+                console.log(result.error.message);
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    // Redirect to the success page after successful payment
+                    window.location.href = '@Url.Action("PaymentSuccess", "Payment", new { userId = @Model.UserId })';
                 }
-            }).then(function(result) {
-                if (result.error) {
-                    // Show error to your customer
-                    console.log(result.error.message);
-                } else {
-                    if (result.paymentIntent.status === 'succeeded') {
-                        // Redirect or display success message
-                        window.location.href = '@Url.Action("Success", "Payment")';
-                    }
-                }
-            });
+            }
         });
-    </script>
+    });
+</script>
 }

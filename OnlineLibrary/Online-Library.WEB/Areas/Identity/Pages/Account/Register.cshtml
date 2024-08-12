@@ -51,11 +51,11 @@ ViewData["Title"] = "Register";
                 <label asp-for="Input.SubscriptionType" class="form-label">Subscription Type</label>
                 <div class="form-check">
                     <input asp-for="Input.SubscriptionType" type="radio" value="Monthly" id="subscriptionMonthly" class="form-check-input" />
-                    <label for="subscriptionMonthly" class="form-check-label">Monthly - 179 MKD</label>
+                    <label for="subscriptionMonthly" class="form-check-label">Monthly - 8 USD</label>
                 </div>
                 <div class="form-check">
                     <input asp-for="Input.SubscriptionType" type="radio" value="Yearly" id="subscriptionYearly" class="form-check-input" />
-                    <label for="subscriptionYearly" class="form-check-label">Yearly - 999 MKD</label>
+                    <label for="subscriptionYearly" class="form-check-label">Yearly - 60 USD</label>
                 </div>
                 <span asp-validation-for="Input.SubscriptionType" class="text-danger"></span>
             </div>
