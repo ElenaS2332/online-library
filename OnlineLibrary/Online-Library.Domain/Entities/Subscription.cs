@@ -10,4 +10,5 @@ public abstract class Subscription
     
     public Guid? UserId { get; set; }
     public User? User { get; set; }
+    public bool IsPaid { get; set; }
 }

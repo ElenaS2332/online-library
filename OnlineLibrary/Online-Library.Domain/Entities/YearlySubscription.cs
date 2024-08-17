@@ -4,6 +4,6 @@ public class YearlySubscription : Subscription
 {
     public override string GetSubscriptionDetails()
     {
-        return $"Yearly Subscription: {Price:C} per year";
+        return $"Yearly Subscription: {Price} USD per year";
     }
 }

@@ -6,3 +6,9 @@
 
 <h1>@ViewData["Title"]</h1>
 <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+<form asp-action="Index" asp-controller="Payment" method="get">
+    <input type="hidden" name="userId" value="@ViewData["UserId"]" />
+    <input type="hidden" name="subscriptionType" value="@ViewData["SubscriptionType"]" />
+    <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+</form>

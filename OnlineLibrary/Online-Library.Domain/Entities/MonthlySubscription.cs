@@ -4,6 +4,6 @@ public class MonthlySubscription : Subscription
 {
     public override string GetSubscriptionDetails()
     {
-        return $"Monthly Subscription: {Price:C} per month";
+        return $"Monthly Subscription: {Price} USD per month";
     }
 }

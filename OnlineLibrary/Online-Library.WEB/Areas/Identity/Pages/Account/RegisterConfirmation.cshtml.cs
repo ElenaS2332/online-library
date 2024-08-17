@@ -44,7 +44,33 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public string EmailConfirmationUrl { get; set; }
-
+        
+        // public async Task<IActionResult> OnGetAsync(string userId, string code = null)
+        // {
+        //     if (userId == null || code == null)
+        //     {
+        //         return RedirectToPage("/Index");
+        //     }
+        //
+        //     var user = await _userManager.FindByIdAsync(userId);
+        //     if (user == null)
+        //     {
+        //         return NotFound($"Unable to load user with ID '{userId}'.");
+        //     }
+        //
+        //     var result = await _userManager.ConfirmEmailAsync(user, code);
+        //     if (!result.Succeeded)
+        //     {
+        //         throw new InvalidOperationException($"Error confirming email for user with ID '{userId}':");
+        //     }
+        //
+        //     return RedirectToAction("Index", "Payment", new
+        //     {
+        //         userId = userId,
+        //         subscriptionType = user.UserSubscription.ToString(),
+        //     });
+        // }
+        
         public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
         {
             if (email == null)
@@ -76,5 +102,6 @@ namespace Online_Library.WEB.Areas.Identity.Pages.Account
 
             return Page();
         }
+
     }
 }

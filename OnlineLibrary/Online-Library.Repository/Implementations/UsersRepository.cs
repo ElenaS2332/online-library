@@ -13,7 +13,7 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
             .ToList();
     }
 
-    public User GetUser(string id)
+    public User? GetUser(string id)
     {
         // Improve logic for users
         var user = context.Users

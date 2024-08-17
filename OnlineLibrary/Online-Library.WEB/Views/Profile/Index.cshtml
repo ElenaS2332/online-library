@@ -30,6 +30,10 @@
                 <dt class="col-sm-3">End Date</dt>
                 <dd class="col-sm-9">@Model.UserSubscription.EndDate.ToShortDateString()</dd>
             </dl>
+            <dl class="row">
+                <dt class="col-sm-3">The subscription is paid: </dt>
+                <dd class="col-sm-9">@Model.UserSubscription.IsPaid</dd>
+            </dl>
         }
         else
         {
