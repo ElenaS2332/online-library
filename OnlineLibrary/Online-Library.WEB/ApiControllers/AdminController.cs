@@ -18,11 +18,6 @@ namespace Online_Library.WEB.ApiControllers
         {
             return subscriptionsService.GetAllSubscriptions().ToList();
         }
-        // [HttpPost("[action]")]
-        // public Subscription GetDetailsForSubscription(Guid id)
-        // {
-        //    return subscriptionsService.GetDetailsForSubscription(id)!;
-        // }
         
         [HttpGet("GetDetailsForSubscription/{id}")]
         public Subscription GetDetailsForSubscription(Guid id)
