@@ -1,58 +1,116 @@
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\appsettings.Development.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\appsettings.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.staticwebassets.runtime.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.exe
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.deps.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.runtimeconfig.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\OnlineLibraryAdmin.pdb
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.GeneratedMSBuildEditorConfig.editorconfig
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.AssemblyInfoInputs.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.AssemblyInfo.cs
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.csproj.CoreCompileInputs.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.MvcApplicationPartsAssemblyInfo.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.RazorAssemblyInfo.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.RazorAssemblyInfo.cs
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.sourcelink.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets.build.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets.development.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets\msbuild.OnlineLibraryAdmin.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets\msbuild.build.OnlineLibraryAdmin.props
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.OnlineLibraryAdmin.props
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.OnlineLibraryAdmin.props
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\scopedcss\bundle\OnlineLibraryAdmin.styles.css
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\scopedcss\projectbundle\OnlineLibraryAdmin.bundle.scp.css
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\refint\OnlineLibraryAdmin.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.pdb
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.genruntimeconfig.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\ref\OnlineLibraryAdmin.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\ClosedXML.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\ExcelDataReader.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\ExcelNumberFormat.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\GemBox.Document.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\HarfBuzzSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\Irony.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\System.Net.Http.Formatting.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\Newtonsoft.Json.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\BouncyCastle.Crypto.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\SixLabors.Fonts.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\SixLabors.ImageSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\SixLabors.ImageSharp.Drawing.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\SkiaSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\System.IO.Packaging.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\XLParser.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\osx\native\libHarfBuzzSharp.dylib
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\osx\native\libSkiaSharp.dylib
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-arm64\native\libSkiaSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-x64\native\libSkiaSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\bin\Debug\net8.0\runtimes\win-x86\native\libSkiaSharp.dll
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLibraryAdmin.csproj.AssemblyReference.cache
-D:\Elena\Faks\Shesti semestar\Integrirani sistemi\Proekt\online-library\OnlineLibraryAdmin\OnlineLibraryAdmin\obj\Debug\net8.0\OnlineLi.8FD1626D.Up2Date
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/appsettings.Development.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/appsettings.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.staticwebassets.runtime.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.exe
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.deps.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.runtimeconfig.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.pdb
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.GeneratedMSBuildEditorConfig.editorconfig
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.AssemblyInfoInputs.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.AssemblyInfo.cs
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.csproj.CoreCompileInputs.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.MvcApplicationPartsAssemblyInfo.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.RazorAssemblyInfo.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.RazorAssemblyInfo.cs
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.sourcelink.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.build.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.development.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.OnlineLibraryAdmin.Microsoft.AspNetCore.StaticWebAssets.props
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.build.OnlineLibraryAdmin.props
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.OnlineLibraryAdmin.props
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.OnlineLibraryAdmin.props
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.pack.json
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/bundle/OnlineLibraryAdmin.styles.css
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/projectbundle/OnlineLibraryAdmin.bundle.scp.css
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/refint/OnlineLibraryAdmin.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.pdb
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.genruntimeconfig.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/ref/OnlineLibraryAdmin.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ClosedXML.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/DocumentFormat.OpenXml.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ExcelDataReader.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ExcelNumberFormat.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/GemBox.Document.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/HarfBuzzSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Irony.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/System.Net.Http.Formatting.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Newtonsoft.Json.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/BouncyCastle.Crypto.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.Fonts.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.ImageSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.ImageSharp.Drawing.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SkiaSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/System.IO.Packaging.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/XLParser.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/osx/native/libSkiaSharp.dylib
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-arm64/native/libSkiaSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x64/native/libSkiaSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x86/native/libSkiaSharp.dll
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.csproj.AssemblyReference.cache
+D:/Elena/Faks/Shesti semestar/Integrirani sistemi/Proekt/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLi.8FD1626D.Up2Date
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/appsettings.Development.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/appsettings.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.staticwebassets.runtime.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.deps.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.runtimeconfig.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/OnlineLibraryAdmin.pdb
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ClosedXML.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/DocumentFormat.OpenXml.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ExcelDataReader.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/ExcelNumberFormat.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/GemBox.Document.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/HarfBuzzSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Irony.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/System.Net.Http.Formatting.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/BouncyCastle.Crypto.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.Fonts.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.ImageSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SixLabors.ImageSharp.Drawing.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/SkiaSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/System.IO.Packaging.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/XLParser.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/osx/native/libHarfBuzzSharp.dylib
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-arm64/native/libHarfBuzzSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x64/native/libHarfBuzzSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x86/native/libHarfBuzzSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/osx/native/libSkiaSharp.dylib
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-arm64/native/libSkiaSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x64/native/libSkiaSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/bin/Debug/net8.0/runtimes/win-x86/native/libSkiaSharp.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.csproj.AssemblyReference.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.GeneratedMSBuildEditorConfig.editorconfig
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.AssemblyInfoInputs.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.AssemblyInfo.cs
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.csproj.CoreCompileInputs.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.MvcApplicationPartsAssemblyInfo.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.RazorAssemblyInfo.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.RazorAssemblyInfo.cs
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.sourcelink.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.build.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.development.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.OnlineLibraryAdmin.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.build.OnlineLibraryAdmin.props
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.OnlineLibraryAdmin.props
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.OnlineLibraryAdmin.props
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/bundle/OnlineLibraryAdmin.styles.css
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/scopedcss/projectbundle/OnlineLibraryAdmin.bundle.scp.css
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLi.8FD1626D.Up2Date
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/refint/OnlineLibraryAdmin.dll
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.pdb
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/OnlineLibraryAdmin.genruntimeconfig.cache
+/Users/elenastamenkovska/RiderProjects/online-library/OnlineLibraryAdmin/OnlineLibraryAdmin/obj/Debug/net8.0/ref/OnlineLibraryAdmin.dll

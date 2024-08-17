@@ -1,0 +1,33 @@
+@model OnlineLibraryAdmin.Models.Subscription
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div>
+        <p>Subscription for: @Model.User.FirstName @Model.User.LastName</p>
+        <p>Subscription start date: @Model.StartDate</p>
+        <p>Subscription end date: @Model.EndDate</p>
+        @if (Model.Price == 8)
+        {
+            <p>Subscription type: Monthly</p>
+        }
+        else
+        {
+            <p>Subscription type: Yearly</p>
+        }
+        <p>Price: @Model.Price</p>
+        @if (Model.IsPaid)
+        {
+            <p>Subscription is paid</p>
+        }
+        else
+        {
+            <p>Subscription is not paid yet</p>
+        }
+        
+    </div>
+</div>

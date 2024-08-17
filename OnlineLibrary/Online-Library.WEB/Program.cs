@@ -35,12 +35,14 @@ builder.Services.AddScoped<IAuthorsRepository, AuthorsRepository>();
 builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IGenresRepository, GenresRepository>();
 builder.Services.AddScoped<IReadingListRepository, ReadingListRepository>();
+builder.Services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
 
 builder.Services.AddTransient<IUsersService, UsersService>();
 builder.Services.AddTransient<IAuthorsService, AuthorsService>();
 builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddTransient<IGenresService, GenresService>();
 builder.Services.AddTransient<IReadingListService, ReadingListService>();
+builder.Services.AddTransient<ISubscriptionsService, SubscriptionsService>();
 
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 

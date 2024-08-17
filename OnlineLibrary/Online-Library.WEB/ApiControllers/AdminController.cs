@@ -8,8 +8,29 @@ namespace Online_Library.WEB.ApiControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController(IGenresService genresService, IAuthorsService authorsService) : ControllerBase
+    public class AdminController(
+        IGenresService genresService, 
+        IAuthorsService authorsService,
+        ISubscriptionsService subscriptionsService) : ControllerBase
     {
+        [HttpGet("[action]")]
+        public List<Subscription> GetAllSubscriptions()
+        {
+            return subscriptionsService.GetAllSubscriptions().ToList();
+        }
+        // [HttpPost("[action]")]
+        // public Subscription GetDetailsForSubscription(Guid id)
+        // {
+        //    return subscriptionsService.GetDetailsForSubscription(id)!;
+        // }
+        
+        [HttpGet("GetDetailsForSubscription/{id}")]
+        public Subscription GetDetailsForSubscription(Guid id)
+        {
+            return subscriptionsService.GetDetailsForSubscription(id)!;
+        }
+        
+        
         [HttpPost("[action]")]
         public async Task ImportGenres(List<GenreDto> model)
         {
