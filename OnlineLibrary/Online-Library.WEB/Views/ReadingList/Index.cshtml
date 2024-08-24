@@ -1,12 +1,9 @@
 @model Online_Library.Domain.Dtos.ReadingListDto
 
-@{
-ViewData["Title"] = "Details";
-}
 
 <div class="container">
-    <h4>Reading List</h4>
-    <hr />
+    <h3 class="mb-4 text-center text-primary">Reading List</h3>
+    
     <div class="row">
         @if (Model.BooksInReadingList != null && Model.BooksInReadingList.Count > 0)
         {
@@ -42,11 +39,18 @@ ViewData["Title"] = "Details";
     <div>
         <p><strong>Total Books:</strong> @Model.Count</p>
     </div>
-    <div>
-        <form asp-action="ClearReadingList" method="post">
-            @Html.AntiForgeryToken()
-            <button type="submit" class="btn btn-danger">Clear Reading List</button>
-        </form>
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+    <div class="row">
+        <div class="col-auto">
+            <form asp-action="ClearReadingList" method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger">Clear Reading List</button>
+            </form>
+        </div>
+        <div class="col-auto">
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
     </div>
+
+
 </div>
