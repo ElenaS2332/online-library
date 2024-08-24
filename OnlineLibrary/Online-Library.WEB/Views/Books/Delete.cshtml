@@ -1,60 +1,70 @@
 @model Online_Library.Domain.Entities.Book
 
 @{
-    ViewData["Title"] = "Delete";
+ViewData["Title"] = "Delete Book";
 }
 
-<h1>Delete</h1>
+<div class="container mt-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-danger text-white">
+            <h2>Delete Book</h2>
+        </div>
+        <div class="card-body">
+            <h3 class="text-center">Are you sure you want to delete this book?</h3>
+            <hr />
+            <div class="mb-3">
+                <h4 class="text-muted">Book Details</h4>
+                <dl class="row">
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>Title:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.Title
+                    </dd>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PublishDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>Publish Date:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.PublishDate.ToString("MMMM dd, yyyy")
+                    </dd>
 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Author!.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Author!.Name)
-        </dd>
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>ISBN:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.ISBN
+                    </dd>
 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre!.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genre!.Name)
-        </dd>
-        
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>Description:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.Description
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>Author:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.Author?.Name
+                    </dd>
+
+                    <dt class="col-sm-4 text-secondary">
+                        <strong>Genre:</strong>
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Model.Genre?.Name
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+            </form>
+            <a asp-action="Index" class="btn btn-secondary mt-3">Back to List</a>
+        </div>
+    </div>
 </div>

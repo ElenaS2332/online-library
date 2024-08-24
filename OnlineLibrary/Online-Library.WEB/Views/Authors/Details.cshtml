@@ -1,36 +1,43 @@
 @model Online_Library.Domain.Entities.Author
 
 @{
-    ViewData["Title"] = "Details";
+ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-header bg-info text-white">
+            <h2>Author Details</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="text-muted">Author Information</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary">
+                    <strong>Name:</strong>
+                </dt>
+                <dd class="col-sm-8">
+                    @Model.Name
+                </dd>
 
-<div>
-    <h4>Author</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Surname)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Surname)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+                <dt class="col-sm-4 text-secondary">
+                    <strong>Surname:</strong>
+                </dt>
+                <dd class="col-sm-8">
+                    @Model.Surname
+                </dd>
+
+                <dt class="col-sm-4 text-secondary">
+                    <strong>Date of Birth:</strong>
+                </dt>
+                <dd class="col-sm-8">
+                    @Model.DateOfBirth.ToString("MMMM dd, yyyy")
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
 </div>

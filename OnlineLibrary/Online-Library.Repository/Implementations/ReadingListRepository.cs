@@ -27,7 +27,7 @@ public class ReadingListRepository(ApplicationDbContext context) : IReadingListR
         
         readingListFromDb.BooksInReadingList = readingList.BooksInReadingList;
         
-        // context.SaveChanges();
+        context.SaveChanges();
     }
 
     public void SaveChanges()

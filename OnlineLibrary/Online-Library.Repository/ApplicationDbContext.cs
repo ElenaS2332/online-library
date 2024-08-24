@@ -34,6 +34,21 @@ namespace Online_Library.Repository
                 .HasOne(u => u.ReadingList)
                 .WithOne(r => r.User)
                 .HasForeignKey<User>(u => u.ReadingListId);
+            
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Author)
+                .WithMany(a => a.Books)
+                .HasForeignKey(b => b.AuthorId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Configure Genre to Books relationship
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Genre)
+                .WithMany(g => g.Books)
+                .HasForeignKey(b => b.GenreId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

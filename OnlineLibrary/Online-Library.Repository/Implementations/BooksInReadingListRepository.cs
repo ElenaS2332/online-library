@@ -39,6 +39,7 @@ public class BooksInReadingListRepository(ApplicationDbContext context) : IBooks
         return context.BooksInReadingLists
             .Where(b => b.ReadingListId == readingListId)
             .Include(b => b.Book)
+            .ThenInclude(b => b.Author)
             .ToList();
     }
 

@@ -19,6 +19,7 @@ public class UsersRepository(ApplicationDbContext context) : IUsersRepository
         var user = context.Users
             .Include(u => u.UserSubscription)
             .Include(u => u.ReadingList)
+            .ThenInclude(r => r.BooksInReadingList)
             .FirstOrDefault(u => u.Id == id);
         return user;
     }

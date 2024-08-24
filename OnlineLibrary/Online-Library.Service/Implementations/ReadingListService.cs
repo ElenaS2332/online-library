@@ -74,7 +74,29 @@ public class ReadingListService(
         readingListRepository.UpdateReadingList(userReadingList);
         return true;
     }
-    
+
+    public bool RemoveAllBooksFromReadingList(string userId)
+    {
+        var loggedInUser = usersRepository.GetUser(userId);
+
+        var userReadingList = loggedInUser.ReadingList;
+        
+        if (userReadingList is null)
+        {
+            return false;
+        }
+        
+        if (userReadingList.BooksInReadingList is null)
+        {
+            return false;
+        }
+        
+        userReadingList.BooksInReadingList.Clear();
+
+        readingListRepository.UpdateReadingList(userReadingList);
+        return true;
+    }
+
     public ReadingListDto GetReadingListInfo(string userId)
     {
         var loggedInUser = usersRepository.GetUser(userId);
@@ -88,8 +110,6 @@ public class ReadingListService(
         
         var allBooks = booksInReadingListRepository
             .GetAllBooksInReadingListByReadingList(userReadingList.Id);
-
-        // var allBooks= userReadingList.BooksInReadingList?.ToList();
         
         var totalCount = allBooks.Count();
 

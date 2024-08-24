@@ -7,6 +7,7 @@ public interface IReadingListService
 {
     bool AddToReadingListConfirmed(BooksInReadingList model, string userId);
     bool RemoveBookFromReadingList(string userId, Guid bookId);
+    bool RemoveAllBooksFromReadingList(string userId);
     ReadingListDto GetReadingListInfo(string userId);
 
     void SaveChanges();

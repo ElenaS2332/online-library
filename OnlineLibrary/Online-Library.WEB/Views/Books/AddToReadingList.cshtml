@@ -1,32 +1,62 @@
 @model Online_Library.Domain.Entities.BooksInReadingList
 
-<h2>Add to Reading List</h2>
+<div class="container mt-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 500px;"> <!-- Smaller card width -->
+        <div class="card-header bg-primary text-white">
+            <h2>Add to Reading List</h2>
+        </div>
+        <div class="card-body">
+            @if (Model.Book != null)
+            {
+                <form asp-action="AddToReadingListConfirmed">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="BookId" />
+                    <input type="hidden" asp-for="ReadingListId" />
 
-@if (Model.Book != null)
-{
-    <div>
-        <form asp-action="AddToReadingListConfirmed">
-            <input type="hidden" asp-for="Id"/>
-            <input type="hidden" asp-for="BookId"/>
-            <input type="hidden" asp-for="ReadingListId"/>
+                    <div class="mb-3 row">
+                        <label class="col-sm-4 col-form-label text-secondary">
+                            Title:
+                        </label>
+                        <div class="col-sm-8">
+                            <span>@Model.Book.Title</span>
+                        </div>
+                    </div>
 
-            <dt class="col-sm-2">Book ID</dt>
-            <dd class="col-sm-10">@Model.BookId</dd>
+                    @{
+                        bool isAlreadyInReadingList = false;
+                        foreach (var book in Model.ReadingList.BooksInReadingList)
+                        {
+                            if (book.BookId == Model.BookId)
+                            {
+                                isAlreadyInReadingList = true;
+                                break; // Exit loop early since we found the book
+                            }
+                        }
+                    }
 
-            <dt class="col-sm-2">Title</dt>
-            <dd class="col-sm-10">@Model.Book.Title</dd>
-
-            <div class="form-group">
-                <input type="submit" value="Add To Reading List" class="btn-info"/>
-            </div>
-        </form>
+                    @if (isAlreadyInReadingList)
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            This book is already in your reading list.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">Add To Reading List</button>
+                        </div>
+                    }
+                </form>
+            }
+            else
+            {
+                <div class="alert alert-danger" role="alert">
+                    The book could not be found.
+                </div>
+            }
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Index" asp-controller="Books" class="btn btn-secondary">Back to List</a>
+        </div>
     </div>
-}
-else
-{
-    <p>The book could not be found.</p>
-}
-
-<div>
-    <a asp-action="Index" asp-controller="Books" class="btn btn-primary">Back to List</a>
 </div>

@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Online_Library.WEB.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Online_Library.WEB.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,7 +18,7 @@ namespace Online_Library.WEB.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Books");
         }
 
         public IActionResult Privacy()
