@@ -46,11 +46,3 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
-
-body {
-  background-image: url('../Assets/library_01.jpg'); 
-  background-size: cover;
-  background-repeat: no-repeat; 
-  background-position: center; 
-}
-

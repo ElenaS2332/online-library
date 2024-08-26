@@ -17,18 +17,18 @@ html {
   min-height: 100%;
 }
 
-body {
+.custom-body {
   margin-bottom: 60px;
   background-image: url('../images/library_04.jpg'); 
   background-size: cover;
   background-repeat: no-repeat; 
 }
 
-.custom-body{
-  padding: 20px;
-  background-color: rgba(145, 75, 23, 0.8);
-  border-radius: 20px;
-}
+/*.custom-body{*/
+/*  padding: 20px;*/
+/*  background-color: rgba(145, 75, 23, 0.8);*/
+/*  border-radius: 20px;*/
+/*}*/
 
 .custom-navbar{
   padding: 10px;
