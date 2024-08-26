@@ -7,9 +7,9 @@ ViewData["Title"] = "Index";
 <div>
     <h3 class="mb-4 text-center text-primary">Authors</h3>
     
-        <p>
-            <a asp-action="Create" class="btn btn-primary mb-3">Create New Author</a>
-        </p>
+        @* <p> *@
+        @*     <a asp-action="Create" class="btn btn-primary mb-3">Create New Author</a> *@
+        @* </p> *@
 
 
     <div class="table-container">
@@ -25,7 +25,7 @@ ViewData["Title"] = "Index";
                 <th>
                     @Html.DisplayNameFor(model => model.DateOfBirth)
                 </th>
-                <th class="text-center">Actions</th>
+                <th class="text-center"></th>
             </tr>
             </thead>
             <tbody>
@@ -41,9 +41,9 @@ ViewData["Title"] = "Index";
                     @item.DateOfBirth.ToString("MMMM dd, yyyy")
                 </td>
                 <td class="text-center">
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Edit</a>
+                    @* <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-secondary">Edit</a> *@
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    @* <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a> *@
                 </td>
             </tr>
             }

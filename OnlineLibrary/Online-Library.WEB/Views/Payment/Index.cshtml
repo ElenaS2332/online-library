@@ -8,7 +8,6 @@ ViewBag.Title = "Complete Your Payment";
 
 <form id="payment-form">
     <div id="card-element">
-        <!--Stripe.js will inject the Card Element here-->
     </div>
     <button id="submit">Pay</button>
 </form>
@@ -16,37 +15,29 @@ ViewBag.Title = "Complete Your Payment";
 @section Scripts {
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    // Initialize Stripe with your publishable key
     var stripe = Stripe('@Model.PublishableKey');
 
-    // Create an instance of Elements
     var elements = stripe.elements();
 
-    // Create an instance of the card Element and hide the postal code field
     var cardElement = elements.create('card', {
         hidePostalCode: true
     });
 
-    // Mount the card Element to the DOM
     cardElement.mount('#card-element');
 
-    // Handle form submission
     var form = document.getElementById('payment-form');
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Confirm the card payment using the client secret
         stripe.confirmCardPayment('@Model.ClientSecret', {
             payment_method: {
                 card: cardElement
             }
         }).then(function(result) {
             if (result.error) {
-                // Display error to your customer
                 console.log(result.error.message);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    // Redirect to the success page after successful payment
                     window.location.href = '@Url.Action("PaymentSuccess", "Payment", new { userId = @Model.UserId })';
                 }
             }

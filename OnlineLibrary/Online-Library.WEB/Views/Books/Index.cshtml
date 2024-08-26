@@ -6,25 +6,23 @@ ViewData["Title"] = "Index";
 
 <div>
     
-    <h3 class="mb-4 white-bg text-center text-primary">All Books</h3>
+    <h3 class="mb-4 text-center text-success">All Books</h3>
 
     <div class="row justify-content-center">
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card h-100" style="border: 2px solid #f1f1f1; background-color: #fafafa;">
+                <div class="card h-100" style="border: 2px solid #f1f1f1; background-color: #badbcc; border-radius: 30px">
                     <div class="card-body">
                         <h5 class="card-title text-black" style="font-weight: bold;">@item.Title</h5>
                         <p class="card-text"><strong>Published:</strong> <span class="text-muted">@item.PublishDate.ToString("MMMM dd, yyyy")</span></p>
                         <p class="card-text"><strong>ISBN:</strong> <span class="text-muted">@item.ISBN</span></p>
                         <p class="card-text"><strong>Description:</strong> <span class="text-muted">@item.Description</span></p>
-                        <p class="card-text"><strong>Author:</strong> <span class="text-muted">@item.Author?.Name</span></p>
+                        <p class="card-text"><strong>Author:</strong> <span class="text-muted">@item.Author?.Name @item.Author?.Surname</span></p>
                         <p class="card-text"><strong>Genre:</strong> <span class="badge bg-info text-dark">@item.Genre?.Name</span></p>
                     </div>
                     <div class="card-footer bg-light">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Edit</a>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
                         <a asp-action="AddToReadingList" asp-route-id="@item.Id" class="btn btn-success btn-sm">Add to Reading List</a>
                     </div>
                 </div>
@@ -32,7 +30,7 @@ ViewData["Title"] = "Index";
         }
     </div>
     <p>
-        <a asp-action="Create" class="btn btn-primary mb-4">Create New</a>
+        @* <a asp-action="Create" class="btn btn-primary mb-4">Create New</a> *@
     </p>
 </div>
 

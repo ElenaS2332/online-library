@@ -42,6 +42,15 @@
                     else
                     {
                         <dd class="col-sm-8">No</dd>
+                        <dd>
+                            <form asp-action="Index" asp-controller="Payment" method="get">
+                                <input type="hidden" name="userId" value="@Model.Id" />
+                                <input type="hidden" name="subscriptionType" value="@Model.UserSubscription" />
+                                <button type="submit" class="btn btn-primary">Pay now</button>
+                            </form>
+                        </dd>
+                        
+
                     }
                 </dl>
                 }
