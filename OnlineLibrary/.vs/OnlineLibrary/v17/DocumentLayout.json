@@ -1,7 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gorgi\\Desktop\\Finki\\3_Godina_2_Semetar\\Integrirani Sistemi\\workspace\\online-library\\OnlineLibrary\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|c:\\users\\elena\\desktop\\online-library\\onlinelibrary\\online-library.web\\apicontrollers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|solutionrelative:online-library.web\\apicontrollers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|c:\\users\\elena\\desktop\\online-library\\onlinelibrary\\online-library.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|solutionrelative:online-library.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|c:\\users\\elena\\desktop\\online-library\\onlinelibrary\\online-library.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|solutionrelative:online-library.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|c:\\users\\elena\\desktop\\online-library\\onlinelibrary\\online-library.web\\appsettings.db.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D0A262B-985A-4923-B20D-15ED65293F4A}|Online-Library.WEB\\Online-Library.WEB.csproj|solutionrelative:online-library.web\\appsettings.db.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC731CB-3BC3-4E85-8928-1A07056BEBE7}|Online-Library.Repository\\Online-Library.Repository.csproj|c:\\users\\elena\\desktop\\online-library\\onlinelibrary\\online-library.repository\\appsettings.db.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AC731CB-3BC3-4E85-8928-1A07056BEBE7}|Online-Library.Repository\\Online-Library.Repository.csproj|solutionrelative:online-library.repository\\appsettings.db.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -25,15 +50,73 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\ApiControllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Online-Library.WEB\\ApiControllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\ApiControllers\\AdminController.cs",
+              "RelativeToolTip": "Online-Library.WEB\\ApiControllers\\AdminController.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAADwv1oAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T09:28:16.383Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Online-Library.WEB\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.Development.json",
+              "RelativeToolTip": "Online-Library.WEB\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-31T19:32:35.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.db.json",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.Repository\\appsettings.db.json",
+              "RelativeDocumentMoniker": "Online-Library.Repository\\appsettings.db.json",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.Repository\\appsettings.db.json",
+              "RelativeToolTip": "Online-Library.Repository\\appsettings.db.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAqAQAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-31T19:02:09.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.db.json",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.db.json",
+              "RelativeDocumentMoniker": "Online-Library.WEB\\appsettings.db.json",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.db.json",
+              "RelativeToolTip": "Online-Library.WEB\\appsettings.db.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-31T19:01:40.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.json",
+              "RelativeDocumentMoniker": "Online-Library.WEB\\appsettings.json",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\online-library\\OnlineLibrary\\Online-Library.WEB\\appsettings.json",
+              "RelativeToolTip": "Online-Library.WEB\\appsettings.json",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-31T19:00:44.208Z"
             }
           ]
         }

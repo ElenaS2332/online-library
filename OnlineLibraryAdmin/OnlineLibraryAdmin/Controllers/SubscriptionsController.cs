@@ -18,7 +18,7 @@ public class SubscriptionsController : Controller
     public IActionResult Index()
     { 
         var client = new HttpClient();
-        var url = "http://localhost:5042/api/Admin/GetAllSubscriptions";
+        var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetAllSubscriptions";
         var response = client.GetAsync(url).Result;
 
         var data = response.Content.ReadAsAsync<List<Subscription>>().Result;
@@ -28,7 +28,7 @@ public class SubscriptionsController : Controller
     public IActionResult Details(Guid id)
     {
         var client = new HttpClient();
-        string url = "http://localhost:5042/api/Admin/GetDetailsForSubscription/"+id;
+        string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetDetailsForSubscription/" + id;
         
         var response = client.GetAsync(url).Result;
 
@@ -39,7 +39,7 @@ public class SubscriptionsController : Controller
     public FileContentResult CreateInvoice(Guid id)
     {
         var client = new HttpClient();
-        var url = "http://localhost:5042/api/Admin/GetDetailsForSubscription/"+id;
+        var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetDetailsForSubscription/" + id;
         var response = client.GetAsync(url).Result;
 
         var data = response.Content.ReadAsAsync<Subscription>().Result;
@@ -78,10 +78,9 @@ public class SubscriptionsController : Controller
             worksheet.Cell(1, 2).Value = "Customer Fullname";
             worksheet.Cell(1, 3).Value = "Subscription Start Date";
             worksheet.Cell(1, 4).Value = "Subscription End Date";
-            // worksheet.Cell(1, 5).Value = "Subscription Details";
 
             var client = new HttpClient();
-            var url = "http://localhost:5042/api/Admin/GetAllSubscriptions";
+            var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetAllSubscriptions";
             var response = client.GetAsync(url).Result;
 
             var data = response.Content.ReadAsAsync<List<Subscription>>().Result;
@@ -98,7 +97,6 @@ public class SubscriptionsController : Controller
                     worksheet.Cell(i + 2, 2).Value = fullname;
                     worksheet.Cell(i + 2, 3).Value = subscription.StartDate;
                     worksheet.Cell(i + 2, 4).Value = subscription.EndDate;
-                    // worksheet.Cell(i + 2, 5).Value = subscription.GetSubscriptionDetails();
             }
 
             using(var stream = new MemoryStream())

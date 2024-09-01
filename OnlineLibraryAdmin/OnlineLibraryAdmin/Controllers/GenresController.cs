@@ -26,7 +26,7 @@ public class GenresController : Controller
 
         List<Genre> genres = GetAllGenresFromFile(file.FileName);
         HttpClient client = new HttpClient();
-        string url = "http://localhost:5042/api/Admin/ImportGenres";
+        string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/ImportGenres";
 
         HttpContent content = new StringContent(JsonConvert.SerializeObject(genres), Encoding.UTF8, "application/json");
 

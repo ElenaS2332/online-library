@@ -13,30 +13,72 @@ public class AuthorsController : Controller
     {
         return View();
     }
-    
-    public IActionResult ImportAuthors(IFormFile file)
+
+
+    //public IActionResult ImportAuthors(IFormFile file)
+    //{
+    //    string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
+
+    //    using (FileStream fileStream = System.IO.File.Create(pathToUpload))
+    //    {
+    //        file.CopyTo(fileStream);
+    //        fileStream.Flush();
+    //    }
+
+    //    List<Author> authors = GetAllAuthorsFromFile(file.FileName);
+    //    HttpClient client = new HttpClient();
+
+    //    HttpClientHandler handler = new HttpClientHandler();
+    //    handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
+
+    //    string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/ImportAuthors";
+
+    //    HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
+
+    //    HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+    //    var result = response.Content.ReadAsAsync<bool>().Result;
+
+    //    return RedirectToAction("Index", "Authors");
+
+    //}
+
+    public async Task<IActionResult> ImportAuthors(IFormFile file)
     {
-        string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
-
-        using (FileStream fileStream = System.IO.File.Create(pathToUpload))
+        try
         {
-            file.CopyTo(fileStream);
-            fileStream.Flush();
+            string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
+
+            using (FileStream fileStream = System.IO.File.Create(pathToUpload))
+            {
+                file.CopyTo(fileStream);
+                fileStream.Flush();
+            }
+
+            List<Author> authors = GetAllAuthorsFromFile(file.FileName);
+
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
+
+            HttpClient client = new HttpClient(handler);
+            
+            string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/ImportAuthors";
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+            var result = response.Content.ReadAsAsync<bool>().Result;
+
+            return RedirectToAction("Index", "Authors");
         }
-
-        List<Author> authors = GetAllAuthorsFromFile(file.FileName);
-        HttpClient client = new HttpClient();
-        string url = "http://localhost:5042/api/Admin/ImportAuthors";
-        
-        HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
-
-        HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-        var result = response.Content.ReadAsAsync<bool>().Result;
-
-        return RedirectToAction("Index", "Authors");
-
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return View("Error");
+        }
     }
+
+
 
     private List<Author> GetAllAuthorsFromFile(string fileName)
     {

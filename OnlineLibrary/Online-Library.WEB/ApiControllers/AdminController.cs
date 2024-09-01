@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Online_Library.Domain.Dtos;
 using Online_Library.Domain.Entities;
+using Online_Library.Service.Implementations;
 using Online_Library.Service.Interfaces;
 
 namespace Online_Library.WEB.ApiControllers
@@ -49,9 +50,31 @@ namespace Online_Library.WEB.ApiControllers
                 }
             }
         }
-        
-        [HttpPost("[action]")]
-        public async Task ImportAuthors(List<AuthorDto> model)
+
+        //[HttpPost("[action]")]
+        //public async Task ImportAuthors([FromBody] List<AuthorDto> model)
+        //{
+        //    foreach (var item in model)
+        //    {
+        //        if (item.Name is null || item.Surname is null)
+        //        {
+        //            continue;
+        //        }
+
+        //        var author = new Author
+        //        {
+        //            Id = Guid.NewGuid(),
+        //            Name = item.Name,
+        //            Surname = item.Surname,
+        //            DateOfBirth = item.DateOfBirth
+        //        };
+
+        //        await authorsService.InsertAuthorAsync(author);
+        //    }
+        //}
+
+        [HttpPost("ImportAuthors")]
+        public async Task<IActionResult> ImportAuthors([FromBody] List<AuthorDto> model)
         {
             foreach (var item in model)
             {
@@ -70,6 +93,8 @@ namespace Online_Library.WEB.ApiControllers
 
                 await authorsService.InsertAuthorAsync(author);
             }
+            return Ok(); // Ensure you return an appropriate status code
         }
+
     }
 }
