@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using ExcelDataReader;
 using Microsoft.AspNetCore.Mvc;
@@ -13,36 +14,7 @@ public class AuthorsController : Controller
     {
         return View();
     }
-
-
-    //public IActionResult ImportAuthors(IFormFile file)
-    //{
-    //    string pathToUpload = $"{Directory.GetCurrentDirectory()}\\files\\{file.FileName}";
-
-    //    using (FileStream fileStream = System.IO.File.Create(pathToUpload))
-    //    {
-    //        file.CopyTo(fileStream);
-    //        fileStream.Flush();
-    //    }
-
-    //    List<Author> authors = GetAllAuthorsFromFile(file.FileName);
-    //    HttpClient client = new HttpClient();
-
-    //    HttpClientHandler handler = new HttpClientHandler();
-    //    handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
-
-    //    string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/ImportAuthors";
-
-    //    HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
-
-    //    HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-    //    var result = response.Content.ReadAsAsync<bool>().Result;
-
-    //    return RedirectToAction("Index", "Authors");
-
-    //}
-
+    
     public async Task<IActionResult> ImportAuthors(IFormFile file)
     {
         try
@@ -69,7 +41,15 @@ public class AuthorsController : Controller
 
             var result = response.Content.ReadAsAsync<bool>().Result;
 
-            return RedirectToAction("Index", "Authors");
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return RedirectToAction("Success", "Authors");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Authors");
+            }
+            
         }
         catch (Exception ex)
         {
@@ -77,9 +57,7 @@ public class AuthorsController : Controller
             return View("Error");
         }
     }
-
-
-
+    
     private List<Author> GetAllAuthorsFromFile(string fileName)
     {
         List<Author> authors = new List<Author>();
@@ -93,17 +71,34 @@ public class AuthorsController : Controller
             {
                 while (reader.Read())
                 {
-                    authors.Add(new Models.Author
-                    {
-                        Name = reader.GetValue(0).ToString(),
-                        Surname = reader.GetValue(1).ToString(),
-                        DateOfBirth = DateTime.Parse(reader.GetValue(2).ToString())
-                    });
-                }
+                    var name = reader.GetValue(0)?.ToString();
+                    var surname = reader.GetValue(1)?.ToString();
+                    var dateOfBirthValue = reader.GetValue(2)?.ToString();
+                    DateTime? dateOfBirth = null;
 
+                    if (DateTime.TryParse(dateOfBirthValue, out DateTime parsedDate))
+                    {
+                        dateOfBirth = parsedDate;
+                    }
+
+                    if (name != null && surname != null && dateOfBirth.HasValue)
+                    {
+                        authors.Add(new Author
+                        {
+                            Name = name,
+                            Surname = surname,
+                            DateOfBirth = dateOfBirth.Value
+                        });
+                    }
+                }
             }
         }
 
         return authors;
+    }
+
+    public IActionResult Success()
+    {
+        return View();
     }
 }
