@@ -17,7 +17,10 @@ public class SubscriptionsController : Controller
     
     public IActionResult Index()
     { 
-        var client = new HttpClient();
+        HttpClientHandler handler = new HttpClientHandler();
+        handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
+
+        HttpClient client = new HttpClient(handler);
         var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetAllSubscriptions";
         var response = client.GetAsync(url).Result;
 
@@ -27,7 +30,10 @@ public class SubscriptionsController : Controller
 
     public IActionResult Details(Guid id)
     {
-        var client = new HttpClient();
+        HttpClientHandler handler = new HttpClientHandler();
+        handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
+
+        HttpClient client = new HttpClient(handler);
         string url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetDetailsForSubscription/" + id;
         
         var response = client.GetAsync(url).Result;
@@ -38,7 +44,10 @@ public class SubscriptionsController : Controller
 
     public FileContentResult CreateInvoice(Guid id)
     {
-        var client = new HttpClient();
+        HttpClientHandler handler = new HttpClientHandler();
+        handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
+
+        HttpClient client = new HttpClient(handler);
         var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetDetailsForSubscription/" + id;
         var response = client.GetAsync(url).Result;
 
@@ -78,8 +87,12 @@ public class SubscriptionsController : Controller
             worksheet.Cell(1, 2).Value = "Customer Fullname";
             worksheet.Cell(1, 3).Value = "Subscription Start Date";
             worksheet.Cell(1, 4).Value = "Subscription End Date";
+            
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true;
 
-            var client = new HttpClient();
+            HttpClient client = new HttpClient(handler);
+            
             var url = "https://online-libraryweb20240831204444.azurewebsites.net/api/Admin/GetAllSubscriptions";
             var response = client.GetAsync(url).Result;
 
