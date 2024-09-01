@@ -15,6 +15,11 @@ public class AuthorsController : Controller
         return View();
     }
     
+    public IActionResult Success()
+    {
+        return View();
+    }
+    
     public async Task<IActionResult> ImportAuthors(IFormFile file)
     {
         try
@@ -38,17 +43,13 @@ public class AuthorsController : Controller
             HttpContent content = new StringContent(JsonConvert.SerializeObject(authors), Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-
-            var result = response.Content.ReadAsAsync<bool>().Result;
-
+            
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 return RedirectToAction("Success", "Authors");
             }
-            else
-            {
-                return RedirectToAction("Index", "Authors");
-            }
+            
+            return RedirectToAction("Index", "Authors");
             
         }
         catch (Exception ex)
@@ -95,10 +96,5 @@ public class AuthorsController : Controller
         }
 
         return authors;
-    }
-
-    public IActionResult Success()
-    {
-        return View();
     }
 }
