@@ -1,13 +1,23 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Online_Library.Domain.Entities;
 
 namespace Online_Library.Repository
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : IdentityDbContext<User>(options)
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
+        private readonly IConfiguration _configuration;
+        private bool _usePartnerDatabase;
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration configuration, bool usePartnerDatabase = false)
+            : base(options)
+        {
+            _configuration = configuration;
+            _usePartnerDatabase = usePartnerDatabase;
+        }
+        
+        
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Genre> Genres { get; set; }
@@ -19,6 +29,32 @@ namespace Online_Library.Repository
 
         public DbSet<ReadingList> ReadingLists { get; set; }
         public DbSet<BooksInReadingList> BooksInReadingLists { get; set; }
+        public DbSet<Team> Teams { get; set; }
+        
+        
+        public void SwitchToPartherDb(bool setToPartherDb)
+        {
+            this._usePartnerDatabase = setToPartherDb;
+        }
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (optionsBuilder.IsConfigured)
+            {
+                var connectionString = _usePartnerDatabase
+                    ? _configuration.GetConnectionString("PartnerDBConnectionString")
+                    : _configuration.GetConnectionString("OnlineLibraryDBConnectionString");
+
+                optionsBuilder.UseSqlServer(connectionString, sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure(
+                        maxRetryCount: 5,    
+                        maxRetryDelay: TimeSpan.FromSeconds(30), 
+                        errorNumbersToAdd: null 
+                    );
+                });
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -51,4 +87,5 @@ namespace Online_Library.Repository
             base.OnModelCreating(modelBuilder);
         }
     }
+    
 }
