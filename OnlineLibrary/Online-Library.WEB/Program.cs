@@ -17,11 +17,15 @@ builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("Email
 var connectionString = builder.Configuration.GetConnectionString("OnlineLibraryDBConnectionString") 
                        ?? throw new InvalidOperationException("Connection string 'OnlineLibraryDBConnectionString' not found.");
 
+var partnerConnectionString = builder.Configuration.GetConnectionString("PartnerDBConnectionString") ?? 
+                          throw new InvalidOperationException("Connection string 'PartnerDatabase' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
         connectionString,
         sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()
         ));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -36,6 +40,7 @@ builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IGenresRepository, GenresRepository>();
 builder.Services.AddScoped<IReadingListRepository, ReadingListRepository>();
 builder.Services.AddScoped<ISubscriptionsRepository, SubscriptionsRepository>();
+builder.Services.AddScoped<ITeamsRepository, TeamsRepository>();
 
 builder.Services.AddTransient<IUsersService, UsersService>();
 builder.Services.AddTransient<IAuthorsService, AuthorsService>();
@@ -43,6 +48,7 @@ builder.Services.AddTransient<IBooksService, BooksService>();
 builder.Services.AddTransient<IGenresService, GenresService>();
 builder.Services.AddTransient<IReadingListService, ReadingListService>();
 builder.Services.AddTransient<ISubscriptionsService, SubscriptionsService>();
+builder.Services.AddTransient<ITeamsService, TeamsService>();
 
 builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 
